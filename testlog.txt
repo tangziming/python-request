@@ -1,0 +1,67 @@
+[2020-03-13 14:19:04,928 :: DEBUG :: test_getlistcansale.py :: setUpModule :: 9] >>>>>setUpModule,__main__模块开始测试>>>>>
+[2020-03-13 14:19:04,929 :: DEBUG :: test_getlistcansale.py :: setUpClass :: 19] >>>>>setUpClass,测试类TestGetListCanSale开始测试>>>>>
+[2020-03-13 14:19:04,994 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-13 14:19:05,019 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /appapi/rest/store/getlistcansale?token=c0863054c681462459d45bfaf3e9db48&shopcode=010101&currentPage=&count= HTTP/1.1" 404 136
+[2020-03-13 14:19:05,024 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
+[2020-03-13 14:19:05,024 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/appapi/rest/store/getlistcansale
+[2020-03-13 14:19:05,024 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'c0863054c681462459d45bfaf3e9db48', 'shopcode': '010101', 'currentPage': '', 'count': ''}
+[2020-03-13 14:19:05,025 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "error": "Not Found",
+  "message": "No message available",
+  "path": "/appapi/rest/store/getlistcansale",
+  "status": 404,
+  "timestamp": 1584080342713
+}
+[2020-03-13 14:19:05,027 :: DEBUG :: test_getlistcansale.py :: tearDownClass :: 27] <<<<<tearDownClass,测试类TestGetListCanSale3测试结束<<<<<
+[2020-03-13 14:19:05,027 :: DEBUG :: test_getlistcansale.py :: tearDownModule :: 12] <<<<<tearDownModule,__main__模块测试结束<<<<<
+[2020-03-13 15:17:14,625 :: DEBUG :: test_getlistcansale.py :: setUpModule :: 9] >>>>>setUpModule,__main__模块开始测试>>>>>
+[2020-03-13 15:17:14,625 :: DEBUG :: test_getlistcansale.py :: setUpClass :: 19] >>>>>setUpClass,测试类TestGetListCanSale开始测试>>>>>
+[2020-03-13 15:17:14,698 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-13 15:17:14,719 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /appapi/rest/store/getlistcansale?token=c0863054c681462459d45bfaf3e9db48&shopcode=010101&currentPage=&count= HTTP/1.1" 404 136
+[2020-03-13 15:17:14,723 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
+[2020-03-13 15:17:14,724 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/appapi/rest/store/getlistcansale
+[2020-03-13 15:17:14,724 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'c0863054c681462459d45bfaf3e9db48', 'shopcode': '010101', 'currentPage': '', 'count': ''}
+[2020-03-13 15:17:14,724 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "error": "Not Found",
+  "message": "No message available",
+  "path": "/appapi/rest/store/getlistcansale",
+  "status": 404,
+  "timestamp": 1584083832324
+}
+[2020-03-13 15:17:14,728 :: DEBUG :: test_getlistcansale.py :: tearDownClass :: 27] <<<<<tearDownClass,测试类TestGetListCanSale3测试结束<<<<<
+[2020-03-13 15:17:14,729 :: DEBUG :: test_getlistcansale.py :: tearDownModule :: 12] <<<<<tearDownModule,__main__模块测试结束<<<<<
+[2020-03-13 15:19:13,700 :: DEBUG :: test_getlistcansale.py :: setUpModule :: 9] >>>>>setUpModule,__main__模块开始测试>>>>>
+[2020-03-13 15:19:13,701 :: DEBUG :: test_getlistcansale.py :: setUpClass :: 19] >>>>>setUpClass,测试类TestGetListCanSale开始测试>>>>>
+[2020-03-13 15:19:13,845 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-13 15:19:13,884 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/store/getlistcansale?token=c0863054c681462459d45bfaf3e9db48&shopcode=010101&currentPage=&count= HTTP/1.1" 200 330
+[2020-03-13 15:19:13,889 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
+[2020-03-13 15:19:13,889 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/store/getlistcansale
+[2020-03-13 15:19:13,890 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'c0863054c681462459d45bfaf3e9db48', 'shopcode': '010101', 'currentPage': '', 'count': ''}
+[2020-03-13 15:19:13,890 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": [
+    {
+      "storecode": "01010101",
+      "storename": "迈尔讯总仓"
+    },
+    {
+      "storecode": "01020201",
+      "storename": "九佛电信销售仓"
+    },
+    {
+      "storecode": "01010103",
+      "storename": "迈尔讯哈哈仓"
+    },
+    {
+      "storecode": "01010104",
+      "storename": "迈尔讯虚拟仓"
+    },
+    {
+      "storecode": "01010204",
+      "storename": "香雪可销售仓2"
+    }
+  ],
+  "msg": "success"
+}
+[2020-03-13 15:19:13,975 :: DEBUG :: test_getlistcansale.py :: tearDownClass :: 27] <<<<<tearDownClass,测试类TestGetListCanSale3测试结束<<<<<
+[2020-03-13 15:19:13,976 :: DEBUG :: test_getlistcansale.py :: tearDownModule :: 12] <<<<<tearDownModule,__main__模块测试结束<<<<<
