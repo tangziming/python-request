@@ -11,20 +11,20 @@ def setUpModule(): #当前模块执行前执行一次
 def tearDownModule():  #当前模块执行后执行一次
     logging.debug('<<<<<tearDownModule,'+__name__+'模块测试结束<<<<<')
 
-class TestGetListCanSale(unittest.TestCase):
+class TestGetBillList(unittest.TestCase):
 
 
     @classmethod    #声明为类方法
     def setUpClass(cls):  #类方法，注意后面的参数是cls
-        logging.debug('>>>>>setUpClass,测试类TestGetListCanSale开始测试>>>>>')
+        logging.debug('>>>>>setUpClass,测试类TestGetBillList开始测试>>>>>')
         #实例化excel类
         cls.excel = Excel("testcase.xls")
-        #类执行前，获取GetListCanSale这个sheet里的数据
-        cls.data_list = cls.excel.get_sheet_list("GetListCanSale")
+        #类执行前，获取GetBillList这个sheet里的数据
+        cls.data_list = cls.excel.get_sheet_list("GetBillList")
     
     @classmethod
     def tearDownClass(cls):
-        logging.debug('<<<<<tearDownClass,测试类TestGetListCanSale3测试结束<<<<<')
+        logging.debug('<<<<<tearDownClass,测试类TestGetBillList测试结束<<<<<')
     
     def setUp(self):
         pass
@@ -65,7 +65,7 @@ class TestGetListCanSale(unittest.TestCase):
         self.assertEqual(res.json()['code'],'200',msg=logging.error('返回码不等于200，OK'))
         #断言
         res_result = res.json()
-        self.dbassert(shopcode,res_result)
+        #self.dbassert(shopcode,res_result)
 
     def test_01_GetListCanSale(self):   
         self.GetListCanSale("case01")
