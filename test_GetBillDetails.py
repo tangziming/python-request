@@ -67,20 +67,20 @@ class TestGetBillDetails(unittest.TestCase):
         res_result = res.json()
         #self.dbassert(shopcode,res_result)
 
-    def test_01_GetListCanSale(self):   
-        self.GetListCanSale("case01")
+    def test_01_GetBillDetails(self):   
+        self.GetBillDetails("case01")
 
-    def test_02_GetListCanSale(self):
-        self.GetListCanSale("case02")
+    def test_02_GetBillDetails(self):
+        self.GetBillDetails("case02")
     
-    def test_03_GetListCanSale(self):
-        self.GetListCanSale("case03")
+    def test_03_GetBillDetails(self):
+        self.GetBillDetails("case03")
 
-    def test_04_GetListCanSale(self):
-        self.GetListCanSale("case04")
+    def test_04_GetBillDetails(self):
+        self.GetBillDetails("case04")
 
-    def test_05_GetListCanSale(self):
-        self.GetListCanSale("case05")
+    def test_05_GetBillDetails(self):
+        self.GetBillDetails("case05")
 
 
 

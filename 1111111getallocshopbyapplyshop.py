@@ -11,20 +11,20 @@ def setUpModule(): #当前模块执行前执行一次
 def tearDownModule():  #当前模块执行后执行一次
     logging.debug('<<<<<tearDownModule,'+__name__+'模块测试结束<<<<<')
 
-class TestGetBillList(unittest.TestCase):
+class Testgetallocshopbyapplyshop(unittest.TestCase):
 
 
     @classmethod    #声明为类方法
     def setUpClass(cls):  #类方法，注意后面的参数是cls
-        logging.debug('>>>>>setUpClass,测试类TestGetBillList开始测试>>>>>')
+        logging.debug('>>>>>setUpClass,测试类Testgetallocshopbyapplyshop开始测试>>>>>')
         #实例化excel类
         cls.excel = Excel("testcase.xls")
-        #类执行前，获取GetBillList这个sheet里的数据
-        cls.data_list = cls.excel.get_sheet_list("GetBillList")
+        #类执行前，获取getallocshopbyapplyshop这个sheet里的数据
+        cls.data_list = cls.excel.get_sheet_list("getallocshopbyapplyshop")
     
     @classmethod
     def tearDownClass(cls):
-        logging.debug('<<<<<tearDownClass,测试类TestGetBillList测试结束<<<<<')
+        logging.debug('<<<<<tearDownClass,测试类Testgetallocshopbyapplyshop测试结束<<<<<')
     
     def setUp(self):
         pass
@@ -49,7 +49,7 @@ class TestGetBillList(unittest.TestCase):
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
-    def GetBillList(self,casename):
+    def GetListCanSale(self,casename):
         case_data = self.excel.get_test_case(self.data_list,casename)
         case_name = case_data.get('case_name')
         url = case_data.get('url')
@@ -67,17 +67,20 @@ class TestGetBillList(unittest.TestCase):
         res_result = res.json()
         #self.dbassert(shopcode,res_result)
 
-    def test_01_GetBillList(self):   
-        self.GetBillList("case01")
+    def test_01_GetListCanSale(self):   
+        self.GetListCanSale("case01")
 
-    def test_02_GetBillList(self):
-        self.GetBillList("case02")
+    def test_02_GetListCanSale(self):
+        self.GetListCanSale("case02")
     
-    def test_03_GetBillList(self):
-        self.GetBillList("case03")
+    def test_03_GetListCanSale(self):
+        self.GetListCanSale("case03")
 
-    def test_04_GetBillList(self):
-        self.GetBillList("case04")
+    def test_04_GetListCanSale(self):
+        self.GetListCanSale("case04")
+
+    def test_04_GetListCanSale(self):
+        self.GetListCanSale("case05")
 
 
 

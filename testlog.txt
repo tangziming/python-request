@@ -1,0 +1,568 @@
+[2020-03-24 15:00:42,711 :: DEBUG :: test_gethotsalegoodlist.py :: setUpModule :: 9] >>>>>setUpModule,__main__模块开始测试>>>>>
+[2020-03-24 15:00:42,712 :: DEBUG :: test_gethotsalegoodlist.py :: setUpClass :: 19] >>>>>setUpClass,测试类TestGetHotSaleGoodList开始测试>>>>>
+[2020-03-24 15:00:42,765 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-24 15:00:42,843 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/GetHotSaleGoodsList?access_token=c81e728d9d4c2f636f067f89cc14862c&shopcode=010101&number=10&numberday=10&method=A&companyid=2 HTTP/1.1" 200 2917
+[2020-03-24 15:00:42,849 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
+[2020-03-24 15:00:42,849 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/GetHotSaleGoodsList
+[2020-03-24 15:00:42,850 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'shopcode': '010101', 'number': '10', 'numberday': '10', 'method': 'A', 'companyid': '2'}
+[2020-03-24 15:00:42,850 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "costtime": 0,
+    "data": [
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "50",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 888.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100106",
+        "goodsname": "华为mate20 PRO 黑色",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "99",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 1.0,
+        "salededuct": 0.0,
+        "saleprice": "100",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 6.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "1000",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 2000.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100103",
+        "goodsname": "zdl华为测试",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "2000",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 2.0,
+        "salededuct": 0.0,
+        "saleprice": "2501",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "startdigit": 0.0,
+        "storestate": 7.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "20",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 3000.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100101",
+        "goodsname": "华为mate20 6+64 樱粉金一二三四五六七八九十",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "30",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 3.0,
+        "salededuct": 0.0,
+        "saleprice": "50",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 4.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "12",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 3000.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100102",
+        "goodsname": "华为mate20 6+64 翡冷翠",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "3000",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 4.0,
+        "salededuct": 0.0,
+        "saleprice": "3111",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 125.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      }
+    ],
+    "errorCode": 200,
+    "msg": "查询成功",
+    "page": 0,
+    "pagesize": 0,
+    "records": 0,
+    "success": true,
+    "total": 0
+  },
+  "msg": "查询成功"
+}
+[2020-03-24 15:00:42,850 :: ERROR :: test_gethotsalegoodlist.py :: GetHotSaleGoodList :: 96] 返回码不等于200，OK
+[2020-03-24 15:00:43,011 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 69] 断言内容
+[2020-03-24 15:00:43,011 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 70] [('0100100106', '华为mate20 PRO 黑色', 1), ('0100100103', 'zdl华为测试', 1), ('0100100102', '华为mate20 6+64 翡冷翠', 1), ('0100100101', '华为mate20 6+64 樱粉金一二三四五六七八九十', 1)]
+[2020-03-24 15:00:43,011 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 73] 0100100106
+[2020-03-24 15:00:43,011 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 74] 0100100106
+[2020-03-24 15:00:43,012 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 75] 华为mate20 PRO 黑色
+[2020-03-24 15:00:43,012 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 76] 华为mate20 PRO 黑色
+[2020-03-24 15:00:43,012 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 77] 仓库编码不相等
+[2020-03-24 15:00:43,012 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 78] 仓库名称不相等
+[2020-03-24 15:00:43,013 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 73] 0100100103
+[2020-03-24 15:00:43,013 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 74] 0100100103
+[2020-03-24 15:00:43,013 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 75] zdl华为测试
+[2020-03-24 15:00:43,013 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 76] zdl华为测试
+[2020-03-24 15:00:43,013 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 77] 仓库编码不相等
+[2020-03-24 15:00:43,014 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 78] 仓库名称不相等
+[2020-03-24 15:00:43,014 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 73] 0100100102
+[2020-03-24 15:00:43,014 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 74] 0100100101
+[2020-03-24 15:00:43,014 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 75] 华为mate20 6+64 翡冷翠
+[2020-03-24 15:00:43,014 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 76] 华为mate20 6+64 樱粉金一二三四五六七八九十
+[2020-03-24 15:00:43,014 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 77] 仓库编码不相等
+[2020-03-24 15:00:43,029 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-24 15:00:43,080 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/GetHotSaleGoodsList?access_token=c81e728d9d4c2f636f067f89cc14862c&shopcode=010101&number=10&numberday=2&method=A&companyid=2 HTTP/1.1" 200 827
+[2020-03-24 15:00:43,083 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case02
+[2020-03-24 15:00:43,083 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/GetHotSaleGoodsList
+[2020-03-24 15:00:43,083 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'shopcode': '010101', 'number': '10', 'numberday': '2', 'method': 'A', 'companyid': '2'}
+[2020-03-24 15:00:43,083 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "costtime": 0,
+    "data": [
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "1000",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 2000.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100103",
+        "goodsname": "zdl华为测试",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "2000",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 1.0,
+        "salededuct": 0.0,
+        "saleprice": "2501",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "startdigit": 0.0,
+        "storestate": 7.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      }
+    ],
+    "errorCode": 200,
+    "msg": "查询成功",
+    "page": 0,
+    "pagesize": 0,
+    "records": 0,
+    "success": true,
+    "total": 0
+  },
+  "msg": "查询成功"
+}
+[2020-03-24 15:00:43,083 :: ERROR :: test_gethotsalegoodlist.py :: GetHotSaleGoodList :: 96] 返回码不等于200，OK
+[2020-03-24 15:00:43,182 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 69] 断言内容
+[2020-03-24 15:00:43,182 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 70] [('0100100103', 'zdl华为测试', 1)]
+[2020-03-24 15:00:43,183 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 73] 0100100103
+[2020-03-24 15:00:43,183 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 74] 0100100103
+[2020-03-24 15:00:43,183 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 75] zdl华为测试
+[2020-03-24 15:00:43,183 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 76] zdl华为测试
+[2020-03-24 15:00:43,183 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 77] 仓库编码不相等
+[2020-03-24 15:00:43,183 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 78] 仓库名称不相等
+[2020-03-24 15:00:43,184 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 80] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-03-24 15:00:43,210 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-24 15:00:43,267 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/GetHotSaleGoodsList?access_token=c81e728d9d4c2f636f067f89cc14862c&shopcode=010102&number=2&numberday=3&method=A&companyid=2 HTTP/1.1" 200 163
+[2020-03-24 15:00:43,269 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case03
+[2020-03-24 15:00:43,269 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/GetHotSaleGoodsList
+[2020-03-24 15:00:43,270 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'shopcode': '010102', 'number': '2', 'numberday': '3', 'method': 'A', 'companyid': '2'}
+[2020-03-24 15:00:43,270 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "costtime": 0,
+    "data": [],
+    "errorCode": 200,
+    "msg": "查询成功",
+    "page": 0,
+    "pagesize": 0,
+    "records": 0,
+    "success": true,
+    "total": 0
+  },
+  "msg": "查询成功"
+}
+[2020-03-24 15:00:43,270 :: ERROR :: test_gethotsalegoodlist.py :: GetHotSaleGoodList :: 96] 返回码不等于200，OK
+[2020-03-24 15:00:43,361 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 69] 断言内容
+[2020-03-24 15:00:43,361 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 70] []
+[2020-03-24 15:00:43,361 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 80] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-03-24 15:00:43,377 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-24 15:00:43,428 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/GetHotSaleGoodsList?access_token=c81e728d9d4c2f636f067f89cc14862c&shopcode=010102&number=2&numberday=10&method=A&companyid=2 HTTP/1.1" 200 163
+[2020-03-24 15:00:43,431 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case04
+[2020-03-24 15:00:43,431 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/GetHotSaleGoodsList
+[2020-03-24 15:00:43,431 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'shopcode': '010102', 'number': '2', 'numberday': '10', 'method': 'A', 'companyid': '2'}
+[2020-03-24 15:00:43,431 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "costtime": 0,
+    "data": [],
+    "errorCode": 200,
+    "msg": "查询成功",
+    "page": 0,
+    "pagesize": 0,
+    "records": 0,
+    "success": true,
+    "total": 0
+  },
+  "msg": "查询成功"
+}
+[2020-03-24 15:00:43,431 :: ERROR :: test_gethotsalegoodlist.py :: GetHotSaleGoodList :: 96] 返回码不等于200，OK
+[2020-03-24 15:00:43,555 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 69] 断言内容
+[2020-03-24 15:00:43,555 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 70] []
+[2020-03-24 15:00:43,556 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 80] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-03-24 15:00:43,569 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-24 15:00:43,643 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/GetHotSaleGoodsList?access_token=c81e728d9d4c2f636f067f89cc14862c&shopcode=010101&number=10&numberday=30&method=A&companyid=2 HTTP/1.1" 200 4270
+[2020-03-24 15:00:43,650 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case05
+[2020-03-24 15:00:43,651 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/GetHotSaleGoodsList
+[2020-03-24 15:00:43,651 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'shopcode': '010101', 'number': '10', 'numberday': '30', 'method': 'A', 'companyid': '2'}
+[2020-03-24 15:00:43,651 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "costtime": 0,
+    "data": [
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "50",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 888.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100106",
+        "goodsname": "华为mate20 PRO 黑色",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "99",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 1.0,
+        "salededuct": 0.0,
+        "saleprice": "100",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 6.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001002",
+        "coachprice": "2500",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 2100.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100201",
+        "goodsname": "华为mate20X1",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "2700",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001002",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 2.0,
+        "salededuct": 0.0,
+        "saleprice": "2800",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 13.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "20",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 3000.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100101",
+        "goodsname": "华为mate20 6+64 樱粉金一二三四五六七八九十",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "30",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 3.0,
+        "salededuct": 0.0,
+        "saleprice": "50",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 4.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "1000",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 2000.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100103",
+        "goodsname": "zdl华为测试",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "2000",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 4.0,
+        "salededuct": 0.0,
+        "saleprice": "2501",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "startdigit": 0.0,
+        "storestate": 7.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "300",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 50.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "6666",
+        "goodsname": "这是虚库商品",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "500",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 5.0,
+        "salededuct": 0.0,
+        "saleprice": "1200",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 0.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      },
+      {
+        "brandcode": "01001",
+        "calunincludetax": "Y",
+        "cansale": "N",
+        "checkprice": 0.0,
+        "classcen": "01001",
+        "classmax": "01",
+        "classmin": "01001001",
+        "coachprice": "12",
+        "combomonthlyfee": 0.0,
+        "commondjqdymoney": 0.0,
+        "costprice": 3000.0,
+        "cutintegral": 0.0,
+        "discountrate": 0.0,
+        "goodscode": "0100100102",
+        "goodsname": "华为mate20 6+64 翡冷翠",
+        "isagentgood": "N",
+        "iscanprepare": "Y",
+        "isintegral": "Y",
+        "lowestprice": "3000",
+        "method": "A",
+        "methodname": "串号",
+        "nodecode": "01001001",
+        "purchaseprice": 0.0,
+        "redeemintegral": 0.0,
+        "refcost": 0.0,
+        "rn": 6.0,
+        "salededuct": 0.0,
+        "saleprice": "3111",
+        "saletaxrate": 0.0,
+        "seqlen": 0.0,
+        "shopflag": "N",
+        "startdigit": 0.0,
+        "storestate": 125.0,
+        "upstatus": "N",
+        "virtualstock": "Y",
+        "virtualstockstatus": "N1"
+      }
+    ],
+    "errorCode": 200,
+    "msg": "查询成功",
+    "page": 0,
+    "pagesize": 0,
+    "records": 0,
+    "success": true,
+    "total": 0
+  },
+  "msg": "查询成功"
+}
+[2020-03-24 15:00:43,651 :: ERROR :: test_gethotsalegoodlist.py :: GetHotSaleGoodList :: 96] 返回码不等于200，OK
+[2020-03-24 15:00:43,761 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 69] 断言内容
+[2020-03-24 15:00:43,761 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 70] [('0100100101', '华为mate20 6+64 樱粉金一二三四五六七八九十', 6), ('0100100201', '华为mate20X1', 3), ('0100100102', '华为mate20 6+64 翡冷翠', 2), ('6666', '这是虚库商品', 1), ('0100100106', '华为mate20 PRO 黑色', 1), ('0100100103', 'zdl华为测试', 1)]
+[2020-03-24 15:00:43,761 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 73] 0100100101
+[2020-03-24 15:00:43,762 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 74] 0100100106
+[2020-03-24 15:00:43,762 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 75] 华为mate20 6+64 樱粉金一二三四五六七八九十
+[2020-03-24 15:00:43,762 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 76] 华为mate20 PRO 黑色
+[2020-03-24 15:00:43,762 :: INFO :: test_gethotsalegoodlist.py :: dbassert :: 77] 仓库编码不相等
+[2020-03-24 15:00:43,793 :: DEBUG :: test_gethotsalegoodlist.py :: tearDownClass :: 27] <<<<<tearDownClass,测试类TestGetHotSaleGoodList测试结束<<<<<
+[2020-03-24 15:00:43,793 :: DEBUG :: test_gethotsalegoodlist.py :: tearDownModule :: 12] <<<<<tearDownModule,__main__模块测试结束<<<<<
