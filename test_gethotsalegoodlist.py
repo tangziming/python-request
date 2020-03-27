@@ -44,8 +44,8 @@ class TestGetHotSaleGoodList(unittest.TestCase):
                             from t_exterbilldetail a, t_exterbill b, t_goods c
                             where a.billid = b.billid
                             and b.billstatus in ('1', '2', '3')
-                            and b.operatetime <= to_date('{today}', 'YYYY-MM-DD')
-                            and b.operatetime >= to_date('{date}', 'YYYY-MM-DD')
+                            and to_char(b.operatetime, 'YYYY-MM-DD') <= '{today}'
+                            and to_char(b.operatetime, 'YYYY-MM-DD') >  '{date}'
                             and b.billtype = '112'
                             and b.shopcode='{shopcode}'
                             and a.goodscode = c.goodscode
@@ -55,8 +55,8 @@ class TestGetHotSaleGoodList(unittest.TestCase):
                             from t_exterbilldetail a, t_exterbill b, t_goods c
                             where a.billid = b.billid
                             and b.billstatus in ('1', '2', '3')
-                            and b.operatetime <= to_date('{today}', 'YYYY-MM-DD')
-                            and b.operatetime >= to_date('{date}', 'YYYY-MM-DD')
+                            and to_char(b.operatetime, 'YYYY-MM-DD') <=  '{today}'
+                            and to_char(b.operatetime, 'YYYY-MM-DD') >  '{date}'
                             and b.billtype = '113'
                             and a.goodscode = c.goodscode
                             and b.shopcode='{shopcode}'
@@ -74,8 +74,8 @@ class TestGetHotSaleGoodList(unittest.TestCase):
             logging.info(res_result['data']['data'][j]['goodscode'])
             logging.info(data_result[j][1])
             logging.info(res_result['data']['data'][j]['goodsname'])
-            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['goodscode'],msg=logging.info("仓库编码不相等"))
-            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['goodsname'],msg=logging.info("仓库名称不相等"))
+            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['goodscode'],msg=logging.info("商品编码不相等"))
+            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['goodsname'],msg=logging.info("商品名称不相等"))
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
