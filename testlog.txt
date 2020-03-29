@@ -1,0 +1,54 @@
+[2020-03-27 18:14:08,705 :: DEBUG :: test_ReceiptDataCommit.py :: setUpModule :: 9] >>>>>setUpModule,__main__模块开始测试>>>>>
+[2020-03-27 18:14:08,707 :: DEBUG :: test_ReceiptDataCommit.py :: setUpClass :: 19] >>>>>setUpClass,测试类TestReceiptDataCommit开始测试>>>>>
+[2020-03-27 18:14:08,865 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-27 18:14:09,320 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/ReceiptDataCommit?access_token=c81e728d9d4c2f636f067f89cc14862c&companyid=2&exterbilljson=%7B%22shopbacktype%22%3A%22000%22%2C%22VIPINFOID%22%3A%22101199%22%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22100%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A81%22%7D&exterbilldetailjson=%5B%7B%22GOODSCODE%22%3A%220100100102%22%2C%22EXCHANGERATE%22%3A%223000%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%2C%7B%22GOODSCODE%22%3A%220100502%22%2C%22EXCHANGERATE%22%3A%22800%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%5D&employeecode=001 HTTP/1.1" 200 38
+[2020-03-27 18:14:09,326 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
+[2020-03-27 18:14:09,327 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/ReceiptDataCommit
+[2020-03-27 18:14:09,327 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'companyid': 2, 'exterbilljson': '{"shopbacktype":"000","VIPINFOID":"101199","SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"100","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注1"}', 'exterbilldetailjson': '[{"GOODSCODE":"0100100102","EXCHANGERATE":"3000","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"},{"GOODSCODE":"0100502","EXCHANGERATE":"800","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"}]', 'employeecode': '001'}
+[2020-03-27 18:14:09,327 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "msg": "请求成功！"
+}
+[2020-03-27 18:14:09,327 :: ERROR :: test_ReceiptDataCommit.py :: ReceiptDataCommit :: 65] 返回码不等于200，OK
+[2020-03-27 18:14:09,334 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-27 18:14:09,413 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/ReceiptDataCommit?access_token=c81e728d9d4c2f636f067f89cc14862c&companyid=2&exterbilljson=%7B%22shopbacktype%22%3A%22000%22%2C%22VIPINFOID%22%3A%22101199%22%2C%22SHOPCODE%22%3A%22010102%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22200%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A82%22%7D&exterbilldetailjson=%5B%7B%22GOODSCODE%22%3A%220100100102%22%2C%22EXCHANGERATE%22%3A%223000%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%2C%7B%22GOODSCODE%22%3A%220100502%22%2C%22EXCHANGERATE%22%3A%22800%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%5D&employeecode=001 HTTP/1.1" 200 101
+[2020-03-27 18:14:09,414 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case02
+[2020-03-27 18:14:09,414 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/ReceiptDataCommit
+[2020-03-27 18:14:09,415 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'companyid': 2, 'exterbilljson': '{"shopbacktype":"000","VIPINFOID":"101199","SHOPCODE":"010102","HANDLEMAN":"001","EARNESTMONEY":"200","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注2"}', 'exterbilldetailjson': '[{"GOODSCODE":"0100100102","EXCHANGERATE":"3000","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"},{"GOODSCODE":"0100502","EXCHANGERATE":"800","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"}]', 'employeecode': '001'}
+[2020-03-27 18:14:09,415 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "501",
+  "msg": "日结日期是[20-3-23 上午12:00:00]，日结到昨天后今天才能做单"
+}
+[2020-03-27 18:14:09,415 :: ERROR :: test_ReceiptDataCommit.py :: ReceiptDataCommit :: 65] 返回码不等于200，OK
+[2020-03-27 18:14:09,494 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-27 18:14:09,740 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/ReceiptDataCommit?access_token=c81e728d9d4c2f636f067f89cc14862c&companyid=2&exterbilljson=%7B%22shopbacktype%22%3A%22000%22%2C%22VIPINFOID%22%3A%22101199%22%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22300%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A83%22%7D&exterbilldetailjson=&employeecode=001 HTTP/1.1" 200 38
+[2020-03-27 18:14:09,741 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case03
+[2020-03-27 18:14:09,741 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/ReceiptDataCommit
+[2020-03-27 18:14:09,742 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'companyid': 2, 'exterbilljson': '{"shopbacktype":"000","VIPINFOID":"101199","SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"300","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注3"}', 'exterbilldetailjson': '', 'employeecode': '001'}
+[2020-03-27 18:14:09,742 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "msg": "请求成功！"
+}
+[2020-03-27 18:14:09,742 :: ERROR :: test_ReceiptDataCommit.py :: ReceiptDataCommit :: 65] 返回码不等于200，OK
+[2020-03-27 18:14:09,748 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-27 18:14:10,224 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/ReceiptDataCommit?access_token=c81e728d9d4c2f636f067f89cc14862c&companyid=2&exterbilljson=%7B%22shopbacktype%22%3A%22001%22%2C%22VIPINFOID%22%3A%22101199%22%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22400%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A84%22%7D&exterbilldetailjson=%5B%7B%22GOODSCODE%22%3A%220100100102%22%2C%22EXCHANGERATE%22%3A%223000%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%2C%7B%22GOODSCODE%22%3A%220100502%22%2C%22EXCHANGERATE%22%3A%22800%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%5D&employeecode=001 HTTP/1.1" 200 38
+[2020-03-27 18:14:10,226 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case04
+[2020-03-27 18:14:10,226 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/ReceiptDataCommit
+[2020-03-27 18:14:10,226 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'companyid': 2, 'exterbilljson': '{"shopbacktype":"001","VIPINFOID":"101199","SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"400","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注4"}', 'exterbilldetailjson': '[{"GOODSCODE":"0100100102","EXCHANGERATE":"3000","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"},{"GOODSCODE":"0100502","EXCHANGERATE":"800","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"}]', 'employeecode': '001'}
+[2020-03-27 18:14:10,227 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "msg": "请求成功！"
+}
+[2020-03-27 18:14:10,227 :: ERROR :: test_ReceiptDataCommit.py :: ReceiptDataCommit :: 65] 返回码不等于200，OK
+[2020-03-27 18:14:10,234 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-03-27 18:14:10,486 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/ReceiptDataCommit?access_token=c81e728d9d4c2f636f067f89cc14862c&companyid=2&exterbilljson=%7B%22shopbacktype%22%3A%22002%22%2C%22VIPINFOID%22%3A%22101199%22%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22500%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A85%22%7D&exterbilldetailjson=&employeecode=001 HTTP/1.1" 200 38
+[2020-03-27 18:14:10,488 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case05
+[2020-03-27 18:14:10,488 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/ReceiptDataCommit
+[2020-03-27 18:14:10,488 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'access_token': 'c81e728d9d4c2f636f067f89cc14862c', 'companyid': 2, 'exterbilljson': '{"shopbacktype":"002","VIPINFOID":"101199","SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"500","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注5"}', 'exterbilldetailjson': '', 'employeecode': '001'}
+[2020-03-27 18:14:10,488 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "msg": "请求成功！"
+}
+[2020-03-27 18:14:10,489 :: ERROR :: test_ReceiptDataCommit.py :: ReceiptDataCommit :: 65] 返回码不等于200，OK
+[2020-03-27 18:14:10,489 :: DEBUG :: test_ReceiptDataCommit.py :: tearDownClass :: 27] <<<<<tearDownClass,测试类TestReceiptDataCommit3测试结束<<<<<
+[2020-03-27 18:14:10,490 :: DEBUG :: test_ReceiptDataCommit.py :: tearDownModule :: 12] <<<<<tearDownModule,__main__模块测试结束<<<<<
