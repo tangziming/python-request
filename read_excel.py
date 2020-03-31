@@ -79,8 +79,10 @@ class Excel():
         new_sheet = new_wb.get_sheet(sheet_index)
 
         header_col = Excel.get_header_col(self,sheet_name,header)
-        print(header_col)
+        print('header_col',header_col)
         for i in range(1,max_row):
+            print('max_row',max_row)
+            print('content[i-1]',content[i-1])
             new_sheet.write(i,header_col,content[i-1])
       
         new_wb.save(self.file_name)
@@ -133,10 +135,11 @@ if __name__ == '__main__':
     #print(excel.get_sheet_by_name("Sheet3"))
 
     #写入内容到执行列
-    #excel.excel_write("PayamountDataCommit","newbillid",["AAAAAA1","BBBBBB1","CCCCCC2"])
+    excel.excel_write("savePayamount","newbillid",["AAAAAA1","BBBBBB1","CCCCCC1","DDDDDD1","EEEEEE1"])
 
+    excel1 = Excel("testcase.xls")
     #匹配数据进行替换
-    #excel.excel_replace("PayamountDataCommit","data","newbillid","oldbillid")
+    excel1.excel_replace("savePayamount","data","newbillid","oldbillid")
     
 
 

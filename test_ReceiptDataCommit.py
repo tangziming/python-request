@@ -32,20 +32,33 @@ class TestReceiptDataCommit(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def dbassert(self,shopcode,data):
+    def dbassert(self,billid,data):
         #数据库实例化
         db = DB()
         #数据库断言
         #主表断言
-        data_result = db.query("select a.billtype,a.billid,a.shopcode,a.billstatus,a.handleman,a.earnestmoney,a.remark,a.shopbacktype,a.reviewman,a.approveman,a.gatherway,a.vipinfoid from t_exterbill a   where billid ='{}'".format(billid))
-        logging.info('数据库结果',data_result)
+        exterbilljson = eval(data['exterbilljson'])
+        
+        data_result = db.query("select a.billtype,a.billid,a.shopcode,a.billstatus,a.handleman, to_char(a.earnestmoney),a.remark,a.shopbacktype,a.reviewman,a.approveman,a.gatherway,a.vipinfoid from t_exterbill a   where billid ='{}'".format(billid))
+        logging.info(data_result)
         for j in range(len(data_result)):
-            logging.info('数据库结果',data_result[j][0])
-            logging.info('请求参',data['exterbilljson']['shopbacktype'])
-            logging.info('数据库结果',data_result[j][1])
-            logging.info('请求参',data['exterbilljson']['VIPINFOID'])    
-            self.assertEqual(data_result[j][0],res_result['data'][j]['storecode'],msg="仓库编码不相等")
-            self.assertEqual(data_result[j][1],res_result['data'][j]['storename'],msg="仓库名称不相等")
+            logging.info(data_result[j][1])   
+            self.assertEqual(data_result[j][0],521,msg="单据类型")
+            self.assertEqual(data_result[j][1],billid,msg="单据ID")
+            self.assertEqual(data_result[j][2],exterbilljson['SHOPCODE'],msg="门店ID")
+            self.assertEqual(data_result[j][3],0,msg="单据状态")
+            self.assertEqual(data_result[j][4],exterbilljson['HANDLEMAN'],msg="处理人")
+            self.assertEqual(data_result[j][5],exterbilljson['EARNESTMONEY'],msg="金额")
+            self.assertEqual(data_result[j][6],exterbilljson['REMARK'],msg="备注")
+            self.assertEqual(data_result[j][7],exterbilljson['shopbacktype'],msg="销售类型")
+            self.assertEqual(data_result[j][8],exterbilljson['REVIEWMAN'],msg="会员名称")
+            self.assertEqual(data_result[j][9],exterbilljson['APPROVEMAN'],msg="会员电话")
+            self.assertEqual(data_result[j][10],exterbilljson['GATHERWAY'],msg="支付方式")
+            self.assertEqual(data_result[j][11],exterbilljson['VIPINFOID'],msg="会员ID")
+
+        if(data['exterbilldetailjson']):
+            exterbilldetailjson = eval(data['exterbilldetailjson'])
+        
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
@@ -54,7 +67,7 @@ class TestReceiptDataCommit(unittest.TestCase):
         case_name = case_data.get('case_name')
         url = case_data.get('url')
         data = eval(case_data.get('data'))
-        billid = data.get('billid')
+        
         #发送请求
         res = requests.get(url=url,params=data)
         #返回结果，并将json转字符串
@@ -62,10 +75,11 @@ class TestReceiptDataCommit(unittest.TestCase):
         #写入日志
         log_case_info(case_name , url , data , res_dict)
         #断言返回码
-        self.assertEqual(res.json()['code'],'200',msg=logging.error('返回码不等于200，OK'))
+        self.assertEqual(res.json()['code'],'200',msg='返回码不等于200，OK')
         #断言
-        res_result = res.json()
-        #self.dbassert(billid,data)
+        billid = res.json()['data']['billid']
+        if(res.json()['code']=='200'):  
+            self.dbassert(billid,data)
 
     def test_01_ReceiptDataCommit(self):   
         self.ReceiptDataCommit("case01")    
