@@ -20,12 +20,14 @@ class TestsavePayamount(unittest.TestCase):
         #实例化excel类
         cls.excel = Excel("testcase.xls")
         #类执行前，获取savePayamount这个sheet里的数据
-        cls.data_list = cls.excel.get_sheet_list("savePayamount")
-    
+        cls.excel.excel_replace("savePayamount","data","newbillid","oldbillid")
+        cls.excel1 = Excel("testcase.xls")
+        cls.data_list = cls.excel1.get_sheet_list("savePayamount")
+
     @classmethod
     def tearDownClass(cls):
         logging.debug('<<<<<tearDownClass,测试类TestsavePayamount3测试结束<<<<<')
-    
+
     def setUp(self):
         pass
 
@@ -54,7 +56,7 @@ class TestsavePayamount(unittest.TestCase):
         case_name = case_data.get('case_name')
         url = case_data.get('url')
         data = eval(case_data.get('data'))
-        billid = data.get('billid')
+        print(data)
         #发送请求
         res = requests.get(url=url,params=data)
         #返回结果，并将json转字符串

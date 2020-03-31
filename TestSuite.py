@@ -1,10 +1,11 @@
 import unittest
-from test_saveDataV3 import TestSaveDataV3
+from test_ReceiptDataCommit import TestReceiptDataCommit
+from test_savePayamount import TestsavePayamount
+suite1 = unittest.TestLoader().loadTestsFromTestCase(TestReceiptDataCommit)
+suite2 = unittest.TestLoader().loadTestsFromTestCase(TestsavePayamount)
 
-suite1 = unittest.TestLoader().loadTestsFromTestCase(TestSaveDataV3)
-
-
-suite = unittest.TestSuite([suite1])
+suite = unittest.TestSuite([suite1,suite2])
 
 unittest.TextTestRunner(verbosity=2).run(suite)
+
 
