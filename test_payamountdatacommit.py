@@ -11,22 +11,22 @@ def setUpModule(): #当前模块执行前执行一次
 def tearDownModule():  #当前模块执行后执行一次
     logging.debug('<<<<<tearDownModule,'+__name__+'模块测试结束<<<<<')
 
-class TestsavePayamount(unittest.TestCase):
+class Testpayamountdatacommit(unittest.TestCase):
 
 
     @classmethod    #声明为类方法
     def setUpClass(cls):  #类方法，注意后面的参数是cls
-        logging.debug('>>>>>setUpClass,测试类TestsavePayamount开始测试>>>>>')
+        logging.debug('>>>>>setUpClass,测试类Testpayamountdatacommit开始测试>>>>>')
         #实例化excel类
         cls.excel = Excel("testcase.xls")
-        #类执行前，获取savePayamount这个sheet里的数据
-        cls.excel.excel_replace("savePayamount","data","newbillid","oldbillid")
+        #类执行前，获取payamountdatacommit这个sheet里的数据
+        cls.excel.excel_replace("payamountdatacommit","data","newbillid","oldbillid")
         cls.excel1 = Excel("testcase.xls")
-        cls.data_list = cls.excel1.get_sheet_list("savePayamount")
+        cls.data_list = cls.excel1.get_sheet_list("payamountdatacommit")
 
     @classmethod
     def tearDownClass(cls):
-        logging.debug('<<<<<tearDownClass,测试类TestsavePayamount3测试结束<<<<<')
+        logging.debug('<<<<<tearDownClass,测试类Testpayamountdatacommit3测试结束<<<<<')
 
     def setUp(self):
         pass
@@ -51,7 +51,7 @@ class TestsavePayamount(unittest.TestCase):
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
-    def savePayamount(self,casename):
+    def payamountdatacommit(self,casename):
         case_data = self.excel.get_test_case(self.data_list,casename)
         case_name = case_data.get('case_name')
         url = case_data.get('url')
@@ -69,20 +69,20 @@ class TestsavePayamount(unittest.TestCase):
         res_result = res.json()
         #self.dbassert(billid,data)
 
-    def test_01_savePayamount(self):   
-        self.savePayamount("case01")    
+    def test_01_payamountdatacommit(self):   
+        self.payamountdatacommit("case01")    
 
-    def test_02_savePayamount(self):
-        self.savePayamount("case02")
+    def test_02_payamountdatacommit(self):
+        self.payamountdatacommit("case02")
     
-    def test_03_savePayamount(self):
-        self.savePayamount("case03")
+    def test_03_payamountdatacommit(self):
+        self.payamountdatacommit("case03")
 
-    def test_04_savePayamount(self):
-        self.savePayamount("case04")
+    def test_04_payamountdatacommit(self):
+        self.payamountdatacommit("case04")
 
-    def test_05_savePayamount(self):
-        self.savePayamount("case05")
+    def test_05_payamountdatacommit(self):
+        self.payamountdatacommit("case05")
 
 
 

@@ -69,7 +69,7 @@ class TestReceiptDataCommit(unittest.TestCase):
                 self.assertEqual(detaildata_result[i][5],exterbilldetailjson[i]['EXCHANGERATE'],msg="金额")
                 self.assertEqual(detaildata_result[i][6],exterbilldetailjson[i]['NUMBERINCLUDETAX'],msg="备注")
                 self.assertEqual(detaildata_result[i][7],exterbilldetailjson[i]['GOODSITEM'],msg="销售类型")
-
+                logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》明细表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
     def ReceiptDataCommit(self,casename):
