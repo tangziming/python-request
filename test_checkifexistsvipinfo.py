@@ -60,9 +60,9 @@ class Testcheckifexistsvipinfo(unittest.TestCase):
         if (case_name=='case05'):
             str = '0123456789'
             phone = "159" +"".join(random.choice(str) for i in range(8))
-            print(phone)
+            
             data['mobiletel'] = phone
-            print(data)
+            
         
         #发送请求
         res = requests.get(url=url,params=data)
