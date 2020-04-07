@@ -49,7 +49,7 @@ class TestGetBillDetails(unittest.TestCase):
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
-    def GetListCanSale(self,casename):
+    def GetBillDetails(self,casename):
         case_data = self.excel.get_test_case(self.data_list,casename)
         case_name = case_data.get('case_name')
         url = case_data.get('url')
