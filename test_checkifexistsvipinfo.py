@@ -33,23 +33,66 @@ class Testcheckifexistsvipinfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def dbassert(self,code,res_result):
+    def dbassert(self,code,res_result,data):
         #数据库实例化
         db = DB()
         #数据库断言
         #主表断言
+        sql = '''select v.cardid,
+                v.vipinfoid,
+                v.vipname,
+                v.sex,
+                v.mobiletel,
+                v.remark,
+                v.putoutmode,
+                v.shopcode,
+                v.operator,
+                v.cardlevel,
+                v.status,
+                v.flymail,
+                v.integral,
+                v.totalintegral,
+                v.vipcardtype,
+                v.vipid
+            from t_crm_vipinfo v
+            where mobiletel = '{mobiletel}' or vipinfoid ='{vipinfoid}'
+        '''
         if code == '200':
 
-            data_result = db.query(''''''.format())
-        logging.info(data_result)
-        for j in range(len(data_result)):
-            logging.info(data_result[j][0])
-            logging.info(res_result['data']['data'][j]['DATACODE'])
-            logging.info(data_result[j][1])
-            logging.info(res_result['data']['data'][j]['DATANAME'])
-            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['DATACODE'],msg="仓库编码不相等")
-            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['DATANAME'],msg="仓库名称不相等")
-            
+            if (data['mobiletel']):
+                mobiletel = data['mobiletel']
+                vipinfoid = 123123123123123123123
+            elif (data['vipinfoid']):
+                mobiletel = 123123123123123123123
+                vipinfoid = data['vipinfoid']
+
+            data_result = db.query(sql.format(mobiletel=mobiletel,vipinfoid=vipinfoid))
+            logging.info(data_result)
+            for j in range(len(data_result)):
+                self.assertEqual(data_result[j][0],res_result['data']['data']['CARDID'],msg="cardid不相等")
+                self.assertEqual(data_result[j][1],res_result['data']['data']['VIPINFOID'],msg="vipinfoid")
+                self.assertEqual(data_result[j][2],res_result['data']['data']['VIPNAME'],msg="VIPNAME")
+                #self.assertEqual(data_result[j][3],res_result['data']['data']['SEX'],msg="SEX")
+                self.assertEqual(data_result[j][4],res_result['data']['data']['MOBILETEL'],msg="MOBILETEL")
+                #self.assertEqual(data_result[j][5],res_result['data']['data']['REMARK'],msg="REMARK")
+                self.assertEqual(data_result[j][6],res_result['data']['data']['PUTOUTMODE'],msg="PUTOUTMODE")
+                self.assertEqual(data_result[j][7],res_result['data']['data']['SHOPCODE'],msg="SHOPCODE")
+                self.assertEqual(data_result[j][8],res_result['data']['data']['OPERATOR'],msg="OPERATOR")
+                #self.assertEqual(data_result[j][9],res_result['data']['data']['CARDLEVEL'],msg="会员级别")
+                self.assertEqual(data_result[j][10],res_result['data']['data']['STATUS'],msg="会员状态")
+                #self.assertEqual(data_result[j][11],res_result['data']['data']['FLYMAIL'],msg="微信")     
+                self.assertEqual(data_result[j][12],res_result['data']['data']['INTEGRAL'],msg="积分当前")
+                self.assertEqual(data_result[j][13],res_result['data']['data']['TOTALINTEGRAL'],msg="累计积分") 
+                self.assertEqual(data_result[j][14],res_result['data']['data']['VIPCARDTYPE'],msg="vip类型")
+                self.assertEqual(data_result[j][15],res_result['data']['data']['VIPID'],msg="vipid")        
+
+        elif  code == '300':                    
+            if (data['mobiletel']):
+                mobiletel = data['mobiletel']
+                vipinfoid = 123123123123123123123
+            data_result = db.query(sql.format(mobiletel=mobiletel,vipinfoid=vipinfoid))
+            logging.info(data_result)
+            self.assertGreaterEqual(len(data_result),2,msg="行数大于等于2")
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
     def checkifexistsvipinfo(self,casename):
@@ -75,7 +118,7 @@ class Testcheckifexistsvipinfo(unittest.TestCase):
         #断言
         res_result = res.json()
         code = res.json()['code']
-        #self.dbassert(code,res_result)
+        self.dbassert(code,res_result,data)
 
     def test_01_checkifexistsvipinfo(self):   
         self.checkifexistsvipinfo("case01")
