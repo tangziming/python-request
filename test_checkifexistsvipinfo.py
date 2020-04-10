@@ -57,14 +57,13 @@ class Testcheckifexistsvipinfo(unittest.TestCase):
             from t_crm_vipinfo v
             where mobiletel = '{mobiletel}' or vipinfoid ='{vipinfoid}'
         '''
-        if code == '200':
-
-            if (data['mobiletel']):
-                mobiletel = data['mobiletel']
-                vipinfoid = 123123123123123123123
-            elif (data['vipinfoid']):
-                mobiletel = 123123123123123123123
-                vipinfoid = data['vipinfoid']
+        if (data['mobiletel']):
+            mobiletel = data['mobiletel']
+            vipinfoid = 123123123123123123123
+        elif (data['vipinfoid']):
+            mobiletel = 123123123123123123123
+            vipinfoid = data['vipinfoid']        
+        if code =='200' :
 
             data_result = db.query(sql.format(mobiletel=mobiletel,vipinfoid=vipinfoid))
             logging.info(data_result)
@@ -87,14 +86,36 @@ class Testcheckifexistsvipinfo(unittest.TestCase):
                 self.assertEqual(data_result[j][15],res_result['data']['data']['VIPID'],msg="vipid")        
 
         elif  code == '300':                    
-            if (data['mobiletel']):
-                mobiletel = data['mobiletel']
-                vipinfoid = 123123123123123123123
             data_result = db.query(sql.format(mobiletel=mobiletel,vipinfoid=vipinfoid))
             logging.info(data_result)
             self.assertGreaterEqual(len(data_result),2,msg="行数大于等于2")
-        return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
+        elif  code == '400': 
+            data_result = db.query(sql.format(mobiletel=mobiletel,vipinfoid=vipinfoid))
+            logging.info(data_result)
+            for j in range(len(data_result)):
+                self.assertIsNotNone(data_result[j][0],msg="cardid不为空")
+                self.assertIsNotNone(data_result[j][1],msg="vipinfoid不为空")            
+                self.assertEqual(data_result[j][2],data['vipname'],msg="会员名称")
+                self.assertEqual(data_result[j][3],data['sex'],msg="性别")
+                self.assertEqual(data_result[j][4],data['mobiletel'],msg="会员电话")
+                self.assertEqual(data_result[j][6],data['putoutmode'],msg="开卡方式")            
+                self.assertEqual(data_result[j][7],data['shopcode'],msg="门店")            
+                self.assertEqual(data_result[j][8],data['operator'],msg="开卡人")            
+                self.assertIsNotNone(data_result[j][9],msg="会员级别")        
+                self.assertEqual(data_result[j][10],1,msg="会员状态") 
+                self.assertEqual(data_result[j][11],0,msg="当前积分")            
+                self.assertEqual(data_result[j][12],0,msg="累计积分")            
+                self.assertIsNotNone(data_result[j][13],msg="开卡状态")            
+                self.assertIsNotNone(data_result[j][14],msg="会员ID")            
+
+
+
+
+
+
+        return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
+        
     def checkifexistsvipinfo(self,casename):
         case_data = self.excel.get_test_case(self.data_list,casename)
         case_name = case_data.get('case_name')  
