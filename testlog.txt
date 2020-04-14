@@ -1,900 +1,204 @@
-[2020-04-09 17:19:39,209 :: DEBUG :: test_GetBillDetails.py :: setUpModule :: 9] >>>>>setUpModule,__main__模块开始测试>>>>>
-[2020-04-09 17:19:39,255 :: DEBUG :: test_GetBillDetails.py :: setUpClass :: 19] >>>>>setUpClass,测试类TestGetBillDetails开始测试>>>>>
-[2020-04-09 17:19:39,351 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
-[2020-04-09 17:19:45,634 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/getbilldetails?token=d986b0ee0328bdd1953406c4f6d856c9&billid=OS010202003160002&billtype=110 HTTP/1.1" 200 5383
-[2020-04-09 17:19:45,642 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
-[2020-04-09 17:19:45,643 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/getbilldetails
-[2020-04-09 17:19:45,643 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billid': 'OS010202003160002', 'billtype': '110'}
-[2020-04-09 17:19:45,643 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+[2020-04-13 17:59:05,592 :: DEBUG :: test_ReceiptDataCommit.py :: setUpModule :: 9] >>>>>setUpModule,test_ReceiptDataCommit模块开始测试>>>>>
+[2020-04-13 17:59:05,592 :: DEBUG :: test_ReceiptDataCommit.py :: setUpClass :: 19] >>>>>setUpClass,测试类TestReceiptDataCommit开始测试>>>>>
+[2020-04-13 17:59:05,634 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:06,018 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/receiptdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&exterbilljson=%7B%22shopbacktype%22%3A%22000%22%2C%22VIPINFOID%22%3A101199%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22100%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A81%22%7D&exterbilldetailjson=%5B%7B%22GOODSCODE%22%3A%220100100102%22%2C%22EXCHANGERATE%22%3A%223000%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%2C%7B%22GOODSCODE%22%3A%220100502%22%2C%22EXCHANGERATE%22%3A%22800%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%5D&employeecode=001 HTTP/1.1" 200 93
+[2020-04-13 17:59:06,021 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
+[2020-04-13 17:59:06,021 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/receiptdatacommit
+[2020-04-13 17:59:06,021 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'exterbilljson': '{"shopbacktype":"000","VIPINFOID":101199,"SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"100","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注1"}', 'exterbilldetailjson': '[{"GOODSCODE":"0100100102","EXCHANGERATE":"3000","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"},{"GOODSCODE":"0100502","EXCHANGERATE":"800","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"}]', 'employeecode': '001'}
+[2020-04-13 17:59:06,022 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "billid": "UE010202004130156",
+    "billtype": 521.0
+  },
+  "msg": "请求成功！"
+}
+[2020-04-13 17:59:06,159 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 44] [(521, 'UE010202004130156', '010101', 0, '001', '100', '这是备注1', '000', '重置的小汤', '15914331626', '0', 101199)]
+[2020-04-13 17:59:06,159 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 58] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》主表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:06,162 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 62] [(521, 'UE010202004130156', '0100100102', '0', '1', '3000', '0', '000'), (521, 'UE010202004130156', '0100502', '0', '1', '800', '0', '000')]
+[2020-04-13 17:59:06,162 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 72] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》明细表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:06,162 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:06,173 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:06,644 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/receiptdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&exterbilljson=%7B%22shopbacktype%22%3A%22000%22%2C%22VIPINFOID%22%3A101199%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22200%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A82%22%7D&exterbilldetailjson=%5B%7B%22GOODSCODE%22%3A%220100100102%22%2C%22EXCHANGERATE%22%3A%223000%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%2C%7B%22GOODSCODE%22%3A%220100502%22%2C%22EXCHANGERATE%22%3A%22800%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%5D&employeecode=001 HTTP/1.1" 200 93
+[2020-04-13 17:59:06,646 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case02
+[2020-04-13 17:59:06,646 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/receiptdatacommit
+[2020-04-13 17:59:06,646 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'exterbilljson': '{"shopbacktype":"000","VIPINFOID":101199,"SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"200","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注2"}', 'exterbilldetailjson': '[{"GOODSCODE":"0100100102","EXCHANGERATE":"3000","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"},{"GOODSCODE":"0100502","EXCHANGERATE":"800","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"}]', 'employeecode': '001'}
+[2020-04-13 17:59:06,647 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "billid": "UE010202004130157",
+    "billtype": 521.0
+  },
+  "msg": "请求成功！"
+}
+[2020-04-13 17:59:06,722 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 44] [(521, 'UE010202004130157', '010101', 0, '001', '200', '这是备注2', '000', '重置的小汤', '15914331626', '0', 101199)]
+[2020-04-13 17:59:06,723 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 58] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》主表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:06,725 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 62] [(521, 'UE010202004130157', '0100100102', '0', '1', '3000', '0', '000'), (521, 'UE010202004130157', '0100502', '0', '1', '800', '0', '000')]
+[2020-04-13 17:59:06,725 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 72] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》明细表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:06,725 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:06,735 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:07,212 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/receiptdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&exterbilljson=%7B%22shopbacktype%22%3A%22000%22%2C%22VIPINFOID%22%3A101199%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22300%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A83%22%7D&exterbilldetailjson=&employeecode=001 HTTP/1.1" 200 93
+[2020-04-13 17:59:07,214 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case03
+[2020-04-13 17:59:07,214 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/receiptdatacommit
+[2020-04-13 17:59:07,214 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'exterbilljson': '{"shopbacktype":"000","VIPINFOID":101199,"SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"300","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注3"}', 'exterbilldetailjson': '', 'employeecode': '001'}
+[2020-04-13 17:59:07,215 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "billid": "UE010202004130158",
+    "billtype": 521.0
+  },
+  "msg": "请求成功！"
+}
+[2020-04-13 17:59:07,299 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 44] [(521, 'UE010202004130158', '010101', 0, '001', '300', '这是备注3', '000', '重置的小汤', '15914331626', '0', 101199)]
+[2020-04-13 17:59:07,299 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 58] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》主表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:07,299 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:07,310 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:07,768 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/receiptdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&exterbilljson=%7B%22shopbacktype%22%3A%22001%22%2C%22VIPINFOID%22%3A101199%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22400%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A84%22%7D&exterbilldetailjson=%5B%7B%22GOODSCODE%22%3A%220100100102%22%2C%22EXCHANGERATE%22%3A%223000%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%2C%7B%22GOODSCODE%22%3A%220100502%22%2C%22EXCHANGERATE%22%3A%22800%22%2C%22PRICEINCLUDETAX%22%3A%220%22%2C%22NUM%22%3A%221%22%2C%22NUMBERINCLUDETAX%22%3A%220%22%2C%22GOODSITEM%22%3A%22000%22%7D%5D&employeecode=001 HTTP/1.1" 200 93
+[2020-04-13 17:59:07,769 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case04
+[2020-04-13 17:59:07,770 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/receiptdatacommit
+[2020-04-13 17:59:07,770 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'exterbilljson': '{"shopbacktype":"001","VIPINFOID":101199,"SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"400","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注4"}', 'exterbilldetailjson': '[{"GOODSCODE":"0100100102","EXCHANGERATE":"3000","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"},{"GOODSCODE":"0100502","EXCHANGERATE":"800","PRICEINCLUDETAX":"0","NUM":"1","NUMBERINCLUDETAX":"0","GOODSITEM":"000"}]', 'employeecode': '001'}
+[2020-04-13 17:59:07,770 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "billid": "UE010202004130159",
+    "billtype": 521.0
+  },
+  "msg": "请求成功！"
+}
+[2020-04-13 17:59:07,845 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 44] [(521, 'UE010202004130159', '010101', 0, '001', '400', '这是备注4', '001', '重置的小汤', '15914331626', '0', 101199)]
+[2020-04-13 17:59:07,845 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 58] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》主表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:07,848 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 62] [(521, 'UE010202004130159', '0100100102', '0', '1', '3000', '0', '000'), (521, 'UE010202004130159', '0100502', '0', '1', '800', '0', '000')]
+[2020-04-13 17:59:07,848 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 72] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》明细表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:07,848 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:07,858 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:08,108 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/receiptdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&exterbilljson=%7B%22shopbacktype%22%3A%22002%22%2C%22VIPINFOID%22%3A101199%2C%22SHOPCODE%22%3A%22010101%22%2C%22HANDLEMAN%22%3A%22001%22%2C%22EARNESTMONEY%22%3A%22500%22%2C%22REVIEWMAN%22%3A%22%E9%87%8D%E7%BD%AE%E7%9A%84%E5%B0%8F%E6%B1%A4%22%2C%22APPROVEMAN%22%3A%2215914331626%22%2C%22GATHERWAY%22%3A%220%22%2C%22REMARK%22%3A%22%E8%BF%99%E6%98%AF%E5%A4%87%E6%B3%A85%22%7D&exterbilldetailjson=&employeecode=001 HTTP/1.1" 200 93
+[2020-04-13 17:59:08,110 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case05
+[2020-04-13 17:59:08,110 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/receiptdatacommit
+[2020-04-13 17:59:08,110 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'exterbilljson': '{"shopbacktype":"002","VIPINFOID":101199,"SHOPCODE":"010101","HANDLEMAN":"001","EARNESTMONEY":"500","REVIEWMAN":"重置的小汤","APPROVEMAN":"15914331626","GATHERWAY":"0","REMARK":"这是备注5"}', 'exterbilldetailjson': '', 'employeecode': '001'}
+[2020-04-13 17:59:08,110 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+  "code": "200",
+  "data": {
+    "billid": "UE010202004130160",
+    "billtype": 521.0
+  },
+  "msg": "请求成功！"
+}
+[2020-04-13 17:59:08,185 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 44] [(521, 'UE010202004130160', '010101', 0, '001', '500', '这是备注5', '002', '重置的小汤', '15914331626', '0', 101199)]
+[2020-04-13 17:59:08,185 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 58] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》主表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:08,185 :: INFO :: test_ReceiptDataCommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:08,190 :: DEBUG :: test_ReceiptDataCommit.py :: tearDownClass :: 28] <<<<<tearDownClass,测试类TestReceiptDataCommit3测试结束<<<<<
+[2020-04-13 17:59:08,226 :: DEBUG :: test_ReceiptDataCommit.py :: tearDownModule :: 12] <<<<<tearDownModule,test_ReceiptDataCommit模块测试结束<<<<<
+[2020-04-13 17:59:08,227 :: DEBUG :: test_payamountdatacommit.py :: setUpModule :: 9] >>>>>setUpModule,test_payamountdatacommit模块开始测试>>>>>
+[2020-04-13 17:59:08,227 :: DEBUG :: test_payamountdatacommit.py :: setUpClass :: 19] >>>>>setUpClass,测试类Testpayamountdatacommit开始测试>>>>>
+[2020-04-13 17:59:08,382 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:09,274 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/payamount/payamountdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&billtype=521&billid=UE010202004130156&payamountjson=%5B%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130156%22%2C%22paytype%22%3A%22004%22%2C%22paytypename%22%3A%22%E9%80%9A%E8%81%94%E5%88%B7%E5%8D%A1%22%2C%22payamount%22%3A60%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A81-1%22%7D%2C%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130156%22%2C%22paytype%22%3A%22001%22%2C%22paytypename%22%3A%22%E7%8E%B0%E9%87%91%22%2C%22payamount%22%3A40%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A81-2%22%7D%5D&employeecode=001 HTTP/1.1" 200 135
+[2020-04-13 17:59:09,275 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case01
+[2020-04-13 17:59:09,276 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/payamount/payamountdatacommit
+[2020-04-13 17:59:09,276 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billtype': '521', 'billid': 'UE010202004130156', 'payamountjson': '[{"billtype":"521","billid":"UE010202004130156","paytype":"004","paytypename":"通联刷卡","payamount":60,"remark":"备注1-1"},{"billtype":"521","billid":"UE010202004130156","paytype":"001","paytypename":"现金","payamount":40,"remark":"备注1-2"}]', 'employeecode': '001'}
+[2020-04-13 17:59:09,276 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
   "code": "200",
   "data": {
     "code": "200",
     "costtime": 0,
-    "data": {
-      "EXTERBILL": {
-        "AUDITDATETIME": "2020-03-16 10:47:05",
-        "AUDITMAN": "001",
-        "AUDITMANNAME": "R5_T2240",
-        "BILLCHECKSTATE": "Y",
-        "BILLFROM": "APP_COMMON",
-        "BILLFROMNAME": "APP普通开单",
-        "BILLID": "OS010202003160002",
-        "BILLSTATUS": 3.0,
-        "BILLSTATUSNAME": "完成",
-        "BILLTYPE": 110.0,
-        "BILLTYPENAME": "零售销售订单",
-        "BUSINESSVOUCHTAG": 0.0,
-        "CITYNAME": "",
-        "COMMISIONMONEY": 0.0,
-        "COUNTRYNAME": "",
-        "CRM_VIPINFO": {
-          "CARDID": "101201",
-          "CARDLEVEL": "006",
-          "DISCOUNTRATE": 0.0,
-          "EXCHANGEINTEGRAL": 0.0,
-          "FLYMAIL": "oZBry1eNDKtho5CE67KUCONWgydQ",
-          "INTEGRAL": 657981.0,
-          "LASTINTEGRAL": 0.0,
-          "LASTTIME": "2020-03-20 08:35:47",
-          "MOBILETEL": "15914331626",
-          "OPERATOR": "001",
-          "PUTOUTDATE": "2019-06-26 11:23:06",
-          "PUTOUTMODE": "APP",
-          "REBATEINTEGRAL": 7072.0,
-          "REMARK": "crm3:1448902",
-          "SALEMANNAME": "",
-          "SALEMONEY": 0.0,
-          "SEX": "1",
-          "SHOPCODE": "010101",
-          "STATUS": "1",
-          "TELTOTALAMOUNT": 144.0,
-          "TELTOTALREALNUMBER": 150.0,
-          "TELTOTALREALSUM": 172155.0,
-          "TELTOTALSALEQUIT": 57.0,
-          "TOTALAMOUNT": 5774.0,
-          "TOTALINTEGRAL": 666843.0,
-          "TOTALREALNUMBER": 5906.0,
-          "TOTALREALSUM": 735365.0,
-          "VALIDDATE": "2019-06-26 10:42:16",
-          "VIPCARDTYPE": "1",
-          "VIPCUSTTYPE": "001",
-          "VIPID": 101199.0,
-          "VIPINFOID": 101199.0,
-          "VIPNAME": "重置的小汤"
-        },
-        "CUSTOMERBATCHID": "15914331626",
-        "DEPCODE": "101199",
-        "DISTRIBUTETYPES": "重置的小汤",
-        "EARNESTMONEY": 0.0,
-        "EXTERBILLDETAIL_LIST": [
-          {
-            "BILLID": "OS010202003160002",
-            "BILLTYPE": 110.0,
-            "COACHPRICE": 999999.0,
-            "DEALSTATE": "Y",
-            "DJQTYPENAME": "",
-            "EXCHANGERATE": 0.0,
-            "GOODSCODE": "0100100101",
-            "GOODSID": "899855",
-            "GOODSNAME": "华为mate20 6+64 樱粉金一二三四五六七八九十",
-            "HASINVOICE": "0",
-            "HASINVOICESTATUS": "0",
-            "HASINVOICESTATUSNAME": "未开发票",
-            "INTEGRALCASH": 0.0,
-            "LOADOBJECT": "UE010202003160002",
-            "LOWESTPRICE": 0.0,
-            "METHOD": "A",
-            "MULTIGOODSID": "899855",
-            "NUMBERINCLUDETAX": 30.0,
-            "PREBILLINGNAME": "",
-            "PRICEINCLUDETAX": 30.0,
-            "REALNUMBER": 1.0,
-            "REALSUM": 30.0,
-            "REPAIRADDYEARNAME": "",
-            "SALELOWESTPRICE": 0.0,
-            "SALEPRICE": "0",
-            "SERIALID": 1415787.0,
-            "STORECODE": "01010101",
-            "STORENAME": "迈尔讯总仓",
-            "STORESHOPCODE": "010101",
-            "STORESHOPCODENAME": "迈尔讯总部",
-            "TOTALTOSTORENUM": 1.0
-          },
-          {
-            "BILLID": "OS010202003160002",
-            "BILLTYPE": 110.0,
-            "COACHPRICE": 888.0,
-            "DEALSTATE": "Y",
-            "DJQTYPENAME": "",
-            "EXCHANGERATE": 0.0,
-            "GOODSCODE": "0100100106",
-            "GOODSID": "h02",
-            "GOODSNAME": "华为mate20 PRO 黑色",
-            "HASINVOICE": "0",
-            "HASINVOICESTATUS": "0",
-            "HASINVOICESTATUSNAME": "未开发票",
-            "INTEGRALCASH": 0.0,
-            "LOADOBJECT": "UE010202003160002",
-            "LOWESTPRICE": 0.0,
-            "METHOD": "A",
-            "MULTIGOODSID": "h02",
-            "NUMBERINCLUDETAX": 70.0,
-            "PREBILLINGNAME": "",
-            "PRICEINCLUDETAX": 70.0,
-            "REALNUMBER": 1.0,
-            "REALSUM": 70.0,
-            "REPAIRADDYEARNAME": "",
-            "SALELOWESTPRICE": 0.0,
-            "SALEPRICE": "0",
-            "SERIALID": 1415788.0,
-            "STORECODE": "01010101",
-            "STORENAME": "迈尔讯总仓",
-            "STORESHOPCODE": "010101",
-            "STORESHOPCODENAME": "迈尔讯总部",
-            "TOTALTOSTORENUM": 1.0
-          }
-        ],
-        "GATHERMAN": "001",
-        "GATHERMANNAME": "R5_T2240",
-        "GROUPEMPBILL_LIST": [],
-        "HANDLEMAN": "001",
-        "HANDLEMANNNAME": "R5_T2240",
-        "INVOICETYPENAME": "",
-        "INVOICINGMODENAME": "",
-        "LINKMANNAME": "",
-        "MASTERCODE": "0100100101",
-        "MASTERSHOPNAME": "",
-        "MOBILETEL": "15914331626",
-        "OPERATETIME": "2020-03-16 10:41:57",
-        "OPERATOR": "001",
-        "OPERATORNAME": "R5_T2240",
-        "ORIGINBILLID": "OS010202003160001",
-        "ORIGINBILLTYPE": 110.0,
-        "PAYSTATUS": "1",
-        "PROVINCENAME": "",
-        "SHOPBACKTYPE": "000",
-        "SHOPBACKTYPENAME": "普通销售",
-        "SHOPCODE": "010101",
-        "SHOPNAME": "迈尔讯总部",
-        "SUMEXCEPTAX": 0.0,
-        "SUMINCLUDETAX": 0.0,
-        "SYSBILLDATE": "2020-03-16 10:41:57",
-        "THELOG": "[{\"method\":\"A\",\"uid\":\"19D2C72C5F\",\"dealdaysnum\":\"\",\"rebateEmp\":\"\",\"rebateReason\":\"\",\"goodscode\":\"0100100101\",\"goodsname\":\"华为mate20 6+64 樱粉金一二三四五六七八九十\",\"price\":999999,\"coachprice\":\"999999\",\"salelowestprice\":0,\"exchangerate\":0,\"saleprice\":0,\"storeshopcode\":\"010101\",\"goodsid\":\"\",\"multigoodsid\":\"\",\"realnumber\":1,\"goodsItemCode\":\"\",\"goodsItemVal\":\"\",\"isreserve\":\"N1\",\"priceincludetax\":30,\"realsum\":30,\"totalprice\":30,\"storecode\":\"01010101\",\"remark\":\"\",\"islock\":true,\"minnumber\":1},{\"method\":\"A\",\"uid\":\"EB300847CB\",\"dealdaysnum\":\"\",\"rebateEmp\":\"\",\"rebateReason\":\"\",\"goodscode\":\"0100100106\",\"goodsname\":\"华为mate20 PRO 黑色\",\"price\":888,\"coachprice\":\"888\",\"salelowestprice\":0,\"exchangerate\":0,\"saleprice\":0,\"storeshopcode\":\"010101\",\"goodsid\":\"\",\"multigoodsid\":\"\",\"realnumber\":1,\"goodsItemCode\":\"\",\"goodsItemVal\":\"\",\"isreserve\":\"N1\",\"priceincludetax\":70,\"realsum\":70,\"totalprice\":70,\"storecode\":\"01010101\",\"remark\":\"\"}]",
-        "TRADEMODECODE": "01",
-        "TRADEMODECODENAME": "普通零售",
-        "TRADESPOT": "010101",
-        "VIPINFOID": 101199.0,
-        "VIPNAME": "重置的小汤"
-      },
-      "PayamountDetails": {
-        "OriginPayamount": [
-          {
-            "BILLID": "OS010202003160001",
-            "BILLTYPE": 110.0,
-            "PAYAMOUNT": 30.0,
-            "PAYTYPCLASSSE": "000",
-            "PAYTYPE": "001",
-            "PAYTYPENAME": "现金",
-            "SOFTTYPE": "0",
-            "UPTAGNAME": "未确认"
-          }
-        ],
-        "Payamount": [
-          {
-            "BILLID": "UE010202003160002",
-            "BILLTYPE": 521.0,
-            "PAYAMOUNT": 70.0,
-            "PAYTYPCLASSSE": "000",
-            "PAYTYPE": "001",
-            "PAYTYPENAME": "现金",
-            "REMARK": "12321",
-            "SOFTTYPE": "0",
-            "UPTAGNAME": "未确认"
-          }
-        ],
-        "PayamountSum": {
-          "AR_DjqdyMoney": 0.0,
-          "AR_Money": 100.0,
-          "DF_Payamount": 0.0,
-          "Origin_Payamount": 0.0,
-          "Pay_Payamount": 100.0,
-          "SHOPBACKTYPE": "000",
-          "SHOPBACKTYPENAME": "普通销售",
-          "bill_Payamount": 0.0,
-          "integralcash": 0.0,
-          "numberincludetax": 100.0,
-          "rebatenum": 0.0,
-          "returnnum": 0.0
-        }
-      }
-    },
-    "msg": "查询成功",
+    "data": "UE010202004130156",
     "page": 0,
     "pagesize": 0,
     "records": 0,
     "success": true,
     "total": 0
-  },
-  "msg": "查询成功"
+  }
 }
-[2020-04-09 17:19:45,644 :: ERROR :: test_GetBillDetails.py :: GetBillDetails :: 65] 返回码不等于200，OK
-[2020-04-09 17:19:45,658 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
-[2020-04-09 17:19:46,729 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/getbilldetails?token=d986b0ee0328bdd1953406c4f6d856c9&billid=OS010202003160001&billtype=110 HTTP/1.1" 200 3787
-[2020-04-09 17:19:46,735 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case02
-[2020-04-09 17:19:46,735 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/getbilldetails
-[2020-04-09 17:19:46,735 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billid': 'OS010202003160001', 'billtype': '110'}
-[2020-04-09 17:19:46,735 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+[2020-04-13 17:59:09,375 :: INFO :: test_payamountdatacommit.py :: dbassert :: 45] [(1, '1')]
+[2020-04-13 17:59:09,377 :: INFO :: test_payamountdatacommit.py :: dbassert :: 52] [(521, 'UE010202004130156', '004', 60.0, '备注1-1'), (521, 'UE010202004130156', '001', 40.0, '备注1-2')]
+[2020-04-13 17:59:09,380 :: INFO :: test_payamountdatacommit.py :: dbassert :: 63] [(521, 'UE010202004130156', '004', 60.0, '备注1-1'), (521, 'UE010202004130156', '001', 40.0, '备注1-2')]
+[2020-04-13 17:59:09,380 :: INFO :: test_payamountdatacommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:09,390 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:10,236 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/payamount/payamountdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&billtype=521&billid=UE010202004130157&payamountjson=%5B%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130157%22%2C%22paytype%22%3A%22004%22%2C%22paytypename%22%3A%22%E9%80%9A%E8%81%94%E5%88%B7%E5%8D%A1%22%2C%22payamount%22%3A120%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A82-1%22%7D%2C%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130157%22%2C%22paytype%22%3A%22001%22%2C%22paytypename%22%3A%22%E7%8E%B0%E9%87%91%22%2C%22payamount%22%3A80%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A82-2%22%7D%5D&employeecode=001 HTTP/1.1" 200 135
+[2020-04-13 17:59:10,237 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case02
+[2020-04-13 17:59:10,238 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/payamount/payamountdatacommit
+[2020-04-13 17:59:10,238 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billtype': '521', 'billid': 'UE010202004130157', 'payamountjson': '[{"billtype":"521","billid":"UE010202004130157","paytype":"004","paytypename":"通联刷卡","payamount":120,"remark":"备注2-1"},{"billtype":"521","billid":"UE010202004130157","paytype":"001","paytypename":"现金","payamount":80,"remark":"备注2-2"}]', 'employeecode': '001'}
+[2020-04-13 17:59:10,238 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
   "code": "200",
   "data": {
     "code": "200",
     "costtime": 0,
-    "data": {
-      "EXTERBILL": {
-        "AUDITDATETIME": "2020-03-16 10:39:39",
-        "AUDITMAN": "001",
-        "AUDITMANNAME": "R5_T2240",
-        "BILLCHECKSTATE": "Y",
-        "BILLFROM": "APP_COMMON",
-        "BILLFROMNAME": "APP普通开单",
-        "BILLID": "OS010202003160001",
-        "BILLSTATUS": 9.0,
-        "BILLSTATUSNAME": "已被引用",
-        "BILLTYPE": 110.0,
-        "BILLTYPENAME": "零售销售订单",
-        "BUSINESSVOUCHTAG": 0.0,
-        "CITYNAME": "",
-        "COMMISIONMONEY": 0.0,
-        "COUNTRYNAME": "",
-        "CRM_VIPINFO": {
-          "CARDID": "101201",
-          "CARDLEVEL": "006",
-          "DISCOUNTRATE": 0.0,
-          "EXCHANGEINTEGRAL": 0.0,
-          "FLYMAIL": "oZBry1eNDKtho5CE67KUCONWgydQ",
-          "INTEGRAL": 657981.0,
-          "LASTINTEGRAL": 0.0,
-          "LASTTIME": "2020-03-20 08:35:47",
-          "MOBILETEL": "15914331626",
-          "OPERATOR": "001",
-          "PUTOUTDATE": "2019-06-26 11:23:06",
-          "PUTOUTMODE": "APP",
-          "REBATEINTEGRAL": 7072.0,
-          "REMARK": "crm3:1448902",
-          "SALEMANNAME": "",
-          "SALEMONEY": 0.0,
-          "SEX": "1",
-          "SHOPCODE": "010101",
-          "STATUS": "1",
-          "TELTOTALAMOUNT": 144.0,
-          "TELTOTALREALNUMBER": 150.0,
-          "TELTOTALREALSUM": 172155.0,
-          "TELTOTALSALEQUIT": 57.0,
-          "TOTALAMOUNT": 5774.0,
-          "TOTALINTEGRAL": 666843.0,
-          "TOTALREALNUMBER": 5906.0,
-          "TOTALREALSUM": 735365.0,
-          "VALIDDATE": "2019-06-26 10:42:16",
-          "VIPCARDTYPE": "1",
-          "VIPCUSTTYPE": "001",
-          "VIPID": 101199.0,
-          "VIPINFOID": 101199.0,
-          "VIPNAME": "重置的小汤"
-        },
-        "CUSTOMERBATCHID": "15914331626",
-        "DEPCODE": "101199",
-        "DISTRIBUTETYPES": "重置的小汤",
-        "EARNESTMONEY": 0.0,
-        "EXTERBILLDETAIL_LIST": [
-          {
-            "BILLID": "OS010202003160001",
-            "BILLTYPE": 110.0,
-            "COACHPRICE": 999999.0,
-            "DJQTYPENAME": "",
-            "EXCHANGERATE": 0.0,
-            "GOODSCODE": "0100100101",
-            "GOODSNAME": "华为mate20 6+64 樱粉金一二三四五六七八九十",
-            "HASINVOICESTATUS": "0",
-            "HASINVOICESTATUSNAME": "",
-            "INTEGRALCASH": 0.0,
-            "LOADOBJECT": "UE010202003160001",
-            "LOWESTPRICE": 0.0,
-            "METHOD": "A",
-            "NUMBERINCLUDETAX": 30.0,
-            "PREBILLINGNAME": "",
-            "PRICEINCLUDETAX": 30.0,
-            "REALNUMBER": 1.0,
-            "REALSUM": 30.0,
-            "REPAIRADDYEARNAME": "",
-            "SALELOWESTPRICE": 0.0,
-            "SALEPRICE": "0",
-            "SERIALID": 1415786.0,
-            "STORECODE": "01010101",
-            "STORENAME": "迈尔讯总仓",
-            "STORESHOPCODE": "010101",
-            "STORESHOPCODENAME": "迈尔讯总部"
-          }
-        ],
-        "GATHERMAN": "001",
-        "GATHERMANNAME": "R5_T2240",
-        "GROUPEMPBILL_LIST": [],
-        "HANDLEMAN": "001",
-        "HANDLEMANNNAME": "R5_T2240",
-        "INVOICETYPENAME": "",
-        "INVOICINGMODENAME": "",
-        "LINKMANNAME": "",
-        "MASTERCODE": "0100100101",
-        "MASTERSHOPNAME": "",
-        "MOBILETEL": "15914331626",
-        "OPERATETIME": "2020-03-16 10:39:40",
-        "OPERATOR": "001",
-        "OPERATORNAME": "R5_T2240",
-        "PAYSTATUS": "1",
-        "PROVINCENAME": "",
-        "SHOPBACKTYPE": "000",
-        "SHOPBACKTYPENAME": "普通销售",
-        "SHOPCODE": "010101",
-        "SHOPNAME": "迈尔讯总部",
-        "SUMEXCEPTAX": 0.0,
-        "SUMINCLUDETAX": 0.0,
-        "SYSBILLDATE": "2020-03-16 10:39:40",
-        "THELOG": "[{\"method\":\"A\",\"uid\":\"19D2C72C5F\",\"dealdaysnum\":\"\",\"rebateEmp\":\"\",\"rebateReason\":\"\",\"goodscode\":\"0100100101\",\"goodsname\":\"华为mate20 6+64 樱粉金一二三四五六七八九十\",\"price\":999999,\"coachprice\":\"999999\",\"salelowestprice\":0,\"exchangerate\":0,\"saleprice\":0,\"storeshopcode\":\"010101\",\"goodsid\":\"\",\"multigoodsid\":\"\",\"realnumber\":1,\"goodsItemCode\":\"\",\"goodsItemVal\":\"\",\"isreserve\":\"N1\",\"priceincludetax\":30,\"realsum\":30,\"totalprice\":30,\"storecode\":\"01010101\",\"remark\":\"\"}]",
-        "TRADEMODECODE": "01",
-        "TRADEMODECODENAME": "普通零售",
-        "TRADESPOT": "010101",
-        "VIPINFOID": 101199.0,
-        "VIPNAME": "重置的小汤"
-      },
-      "PayamountDetails": {
-        "OriginPayamount": [],
-        "Payamount": [
-          {
-            "BILLID": "UE010202003160001",
-            "BILLTYPE": 521.0,
-            "PAYAMOUNT": 30.0,
-            "PAYTYPCLASSSE": "000",
-            "PAYTYPE": "001",
-            "PAYTYPENAME": "现金",
-            "SOFTTYPE": "0",
-            "UPTAGNAME": "未确认"
-          }
-        ],
-        "PayamountSum": {
-          "AR_DjqdyMoney": 0.0,
-          "AR_Money": 30.0,
-          "DF_Payamount": 0.0,
-          "Origin_Payamount": 0.0,
-          "Pay_Payamount": 30.0,
-          "SHOPBACKTYPE": "000",
-          "SHOPBACKTYPENAME": "普通销售",
-          "bill_Payamount": 0.0,
-          "integralcash": 0.0,
-          "numberincludetax": 30.0,
-          "rebatenum": 0.0,
-          "returnnum": 0.0
-        }
-      }
-    },
-    "msg": "查询成功",
+    "data": "UE010202004130157",
     "page": 0,
     "pagesize": 0,
     "records": 0,
     "success": true,
     "total": 0
-  },
-  "msg": "查询成功"
+  }
 }
-[2020-04-09 17:19:46,736 :: ERROR :: test_GetBillDetails.py :: GetBillDetails :: 65] 返回码不等于200，OK
-[2020-04-09 17:19:46,743 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
-[2020-04-09 17:19:48,403 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/getbilldetails?token=d986b0ee0328bdd1953406c4f6d856c9&billid=OS010202003130003&billtype=110 HTTP/1.1" 200 9910
-[2020-04-09 17:19:48,409 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case03
-[2020-04-09 17:19:48,410 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/getbilldetails
-[2020-04-09 17:19:48,410 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billid': 'OS010202003130003', 'billtype': '110'}
-[2020-04-09 17:19:48,410 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+[2020-04-13 17:59:10,315 :: INFO :: test_payamountdatacommit.py :: dbassert :: 45] [(1, '1')]
+[2020-04-13 17:59:10,318 :: INFO :: test_payamountdatacommit.py :: dbassert :: 52] [(521, 'UE010202004130157', '004', 120.0, '备注2-1'), (521, 'UE010202004130157', '001', 80.0, '备注2-2')]
+[2020-04-13 17:59:10,321 :: INFO :: test_payamountdatacommit.py :: dbassert :: 63] [(521, 'UE010202004130157', '004', 120.0, '备注2-1'), (521, 'UE010202004130157', '001', 80.0, '备注2-2')]
+[2020-04-13 17:59:10,321 :: INFO :: test_payamountdatacommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:10,331 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:11,195 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/payamount/payamountdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&billtype=521&billid=UE010202004130158&payamountjson=%5B%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130158%22%2C%22paytype%22%3A%22004%22%2C%22paytypename%22%3A%22%E9%80%9A%E8%81%94%E5%88%B7%E5%8D%A1%22%2C%22payamount%22%3A180%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A83-1%22%7D%2C%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130158%22%2C%22paytype%22%3A%22001%22%2C%22paytypename%22%3A%22%E7%8E%B0%E9%87%91%22%2C%22payamount%22%3A120%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A83-2%22%7D%5D&employeecode=001 HTTP/1.1" 200 135
+[2020-04-13 17:59:11,196 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case03
+[2020-04-13 17:59:11,197 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/payamount/payamountdatacommit
+[2020-04-13 17:59:11,197 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billtype': '521', 'billid': 'UE010202004130158', 'payamountjson': '[{"billtype":"521","billid":"UE010202004130158","paytype":"004","paytypename":"通联刷卡","payamount":180,"remark":"备注3-1"},{"billtype":"521","billid":"UE010202004130158","paytype":"001","paytypename":"现金","payamount":120,"remark":"备注3-2"}]', 'employeecode': '001'}
+[2020-04-13 17:59:11,197 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
   "code": "200",
   "data": {
     "code": "200",
     "costtime": 0,
-    "data": {
-      "EXTERBILL": {
-        "AUDITDATETIME": "2020-03-13 14:41:42",
-        "AUDITMAN": "001",
-        "AUDITMANNAME": "R5_T2240",
-        "BILLFROM": "PC_BILL",
-        "BILLFROMNAME": "PC开单",
-        "BILLID": "OS010202003130003",
-        "BILLSTATUS": 13.0,
-        "BILLSTATUSNAME": "",
-        "BILLTYPE": 110.0,
-        "BILLTYPENAME": "零售销售订单",
-        "CITYNAME": "",
-        "COUNTRYNAME": "",
-        "CRM_VIPINFO": {
-          "ACCEPTINFO": "1",
-          "CARDID": "19062710055676",
-          "CARDLEVEL": "006",
-          "CERTTYPE": "001",
-          "DISCOUNTRATE": 0.0,
-          "EXCHANGEINTEGRAL": 0.0,
-          "INTEGRAL": 63591.0,
-          "LASTINTEGRAL": 3290.0,
-          "LASTTIME": "2020-01-02 16:35:54",
-          "MOBILETEL": "15018493994",
-          "OPERATOR": "001",
-          "PUTOUTDATE": "2019-06-27 10:04:44",
-          "REBATEINTEGRAL": 0.0,
-          "SALEMANNAME": "",
-          "SALEMONEY": 0.0,
-          "SEX": "1",
-          "SHOPCODE": "010101",
-          "STATUS": "1",
-          "TELTOTALAMOUNT": 30.0,
-          "TELTOTALREALNUMBER": 31.0,
-          "TELTOTALREALSUM": 64561.0,
-          "TELTOTALSALEQUIT": 1.0,
-          "TOTALAMOUNT": 30.0,
-          "TOTALINTEGRAL": 163590.0,
-          "TOTALREALNUMBER": 32.0,
-          "TOTALREALSUM": 64591.0,
-          "VALIDDATE": "2019-06-27 10:04:44",
-          "VIPCARDTYPE": "1",
-          "VIPCUSTTYPE": "001",
-          "VIPID": 101217.0,
-          "VIPINFOID": 101217.0,
-          "VIPNAME": "小赖"
-        },
-        "CUSTOMERBATCHID": "15018493994",
-        "DEPCODE": "101217",
-        "DISTRIBUTETYPES": "小赖",
-        "EXTERBILLDETAIL_LIST": [
-          {
-            "BILLID": "OS010202003130003",
-            "BILLTYPE": 110.0,
-            "COACHPRICE": 0.0,
-            "DJQDYMONEY": 0.0,
-            "DJQPARVALUE": 0.0,
-            "DJQTYPENAME": "",
-            "EXCHANGERATE": 0.0,
-            "GOODSCODE": "0402",
-            "GOODSNAME": "会员商品",
-            "HASINVOICESTATUS": "0",
-            "HASINVOICESTATUSNAME": "",
-            "LOADOBJECT": "UR010202003160001",
-            "METHOD": "D",
-            "NUMBERINCLUDETAX": 0.0,
-            "PREBILLINGNAME": "",
-            "PRICEINCLUDETAX": 120.0,
-            "REALNUMBER": 1.0,
-            "REALSUM": 120.0,
-            "REBATENUM": 0.0,
-            "REPAIRADDYEAR": "0",
-            "REPAIRADDYEARNAME": "",
-            "SALELOWESTPRICE": 0.0,
-            "SALEPRICE": "0",
-            "SERIALID": 1415773.0,
-            "STORENAME": "",
-            "STORESHOPCODENAME": ""
-          }
-        ],
-        "GATHERMAN": "001",
-        "GATHERMANNAME": "R5_T2240",
-        "GROUPEMPBILL_LIST": [],
-        "HANDLEMAN": "001",
-        "HANDLEMANNNAME": "R5_T2240",
-        "INVOICETYPENAME": "",
-        "INVOICINGMODENAME": "",
-        "LINKMANNAME": "",
-        "MASTERSHOPNAME": "",
-        "MOBILETEL": "15018493994",
-        "OPERATETIME": "2020-03-13 14:41:11",
-        "OPERATOR": "001",
-        "OPERATORNAME": "R5_T2240",
-        "PAYSTATUS": "1",
-        "PROVINCENAME": "",
-        "SHOPBACKTYPE": "000",
-        "SHOPBACKTYPENAME": "普通销售",
-        "SHOPCODE": "010101",
-        "SHOPNAME": "迈尔讯总部",
-        "SYSBILLDATE": "2020-03-13 13:53:56",
-        "THELOG": "{\"countergroup\":{},\"goodslist\":[{\"METHOD\":{\"text\":\"商品类型\",\"value\":\"D\"},\"UID\":\"07794ABE40\",\"GOODSCODE\":{\"text\":\"商品编码\",\"value\":\"0402\"},\"GOODSNAME\":{\"text\":\"商品名称\",\"value\":\"会员商品\"},\"COACHPRICE\":{\"text\":\"成本价\",\"value\":0},\"SALELOWESTPRICE\":{\"text\":\"最低零售价\",\"value\":0},\"EXCHANGERATE\":{\"text\":\"定价\",\"value\":0},\"SALEPRICE\":{\"text\":\"零售价\",\"value\":0},\"STORESHOPCODE\":{\"text\":\"门店\",\"value\":\"\",\"name\":\"\"},\"REALNUMBER\":{\"text\":\"数量\",\"value\":1},\"SYSCUSTOMTYPE\":{\"text\":\"系统自定义参数\",\"value\":\"N\"},\"WHITECARDTEL\":{\"text\":\"业务号码\",\"value\":\"\",\"display\":\"show\",\"type\":\"input\",\"readonly\":false},\"ACCEPTNAME\":{\"text\":\"受理人姓名\",\"value\":\"\"},\"ACCEPTMAN\":{\"text\":\"受理人编码\",\"value\":\"\"},\"ACCEPTBILLID\":{\"text\":\"受理单号\",\"value\":\"\"},\"PRICEINCLUDETAX\":{\"text\":\"单价\",\"value\":120},\"NUMBERINCLUDETAX\":{\"text\":\"应收金额\",\"value\":120},\"REALSUM\":{\"text\":\"总价\",\"value\":120},\"CONNECTNUMBER\":{\"text\":\"接入号\",\"value\":\"\",\"display\":\"show\",\"type\":\"input\"},\"GOODSTYPE\":{\"text\":\"套餐关联标志\",\"value\":2},\"ISCOMBOGOOD\":{\"text\":\"是否套餐\",\"value\":\"N\"},\"DJQTYPE\":{\"text\":\"代金券类型\",\"value\":\"\",\"display\":\"hide\",\"type\":\"select\",\"list\":[{\"ID\":\"\",\"NAME\":\"请选择\"},{\"NODECODE\":\"GATHERSORT\",\"BASETYPE\":\"SystemParameter\",\"DATACODE\":\"012\",\"DATANAME\":\"电信代金卷\",\"OTHERCODE\":null,\"STATE\":\"Y\",\"TYPE\":\"-986896\",\"RATE\":0,\"REMARK\":null,\"CANSALE\":null,\"METHOD\":\"N\",\"CHECKNAME\":null,\"DESCRIBLE\":null,\"EDITOR\":\"N\",\"EDITDATE\":null,\"CANEDIT\":null,\"VALUE\":\"100\",\"PROVIDER\":null,\"BASETYPENAME\":null,\"ISSTATIC\":\"N\",\"SHARETAG\":\"Y\",\"BACKTAG\":\"N\",\"AUTOINFLAG\":\"N\",\"DEFAULTGOODSTYPE\":null,\"ISCOMPOUND\":null,\"DEFAULTDJQVALUE\":null,\"ITEMSALETYPE\":null,\"REBATENUM\":null,\"REBATENUMUSED\":null,\"ITEMSAQUITTYPE\":null,\"UNTILREMARK\":null,\"EFFECTREMARK\":null,\"STARTDATE\":null,\"ENDDATE\":null,\"SHBADFLAG\":\"Y\",\"LONGITUDE\":null,\"LATITUDE\":null,\"ISTEAMSTORE\":\"N\",\"SHOPNAME\":\"\",\"SOFTTYPE\":\"0\",\"PAYMAP\":null,\"ID\":\"012\",\"NAME\":\"电信代金卷\"}]},\"DJQID\":{\"text\":\"代金券券号\",\"value\":\"\",\"display\":\"hide\",\"type\":\"input\"},\"DJQPARVALUE\":{\"text\":\"代金券面值\",\"value\":\"0\",\"display\":\"hide\",\"type\":\"input\"},\"DJQDYMONEY\":{\"text\":\"券抵用金额\",\"value\":\"0\",\"display\":\"hide\",\"type\":\"input\"},\"REPAIRADDYEAR\":{\"text\":\"延保\",\"value\":0,\"display\":\"show\",\"type\":\"select\",\"list\":[{\"ID\":\"\",\"NAME\":\"请选择\"},{\"NODECODE\":\"REPAIRADDYEAR\",\"BASETYPE\":\"SystemParameter\",\"DATACODE\":\"01\",\"DATANAME\":\"两年\",\"OTHERCODE\":null,\"STATE\":null,\"TYPE\":\"-2830136\",\"RATE\":0,\"REMARK\":null,\"CANSALE\":null,\"METHOD\":null,\"CHECKNAME\":null,\"DESCRIBLE\":null,\"EDITOR\":null,\"EDITDATE\":null,\"CANEDIT\":null,\"VALUE\":\"24\",\"PROVIDER\":null,\"BASETYPENAME\":null,\"ISSTATIC\":\"N\",\"SHARETAG\":null,\"BACKTAG\":null,\"AUTOINFLAG\":\"N\",\"DEFAULTGOODSTYPE\":null,\"ISCOMPOUND\":null,\"DEFAULTDJQVALUE\":null,\"ITEMSALETYPE\":null,\"REBATENUM\":null,\"REBATENUMUSED\":null,\"ITEMSAQUITTYPE\":null,\"UNTILREMARK\":null,\"EFFECTREMARK\":null,\"STARTDATE\":null,\"ENDDATE\":null,\"SHBADFLAG\":null,\"LONGITUDE\":null,\"LATITUDE\":null,\"ISTEAMSTORE\":\"N\",\"SHOPNAME\":\"\",\"SOFTTYPE\":\"0\",\"PAYMAP\":\"N\",\"ID\":\"01\",\"NAME\":\"两年\"},{\"NODECODE\":\"REPAIRADDYEAR\",\"BASETYPE\":\"SystemParameter\",\"DATACODE\":\"02\",\"DATANAME\":\"两年半\",\"OTHERCODE\":null,\"STATE\":null,\"TYPE\":\"-2830136\",\"RATE\":0,\"REMARK\":null,\"CANSALE\":null,\"METHOD\":null,\"CHECKNAME\":null,\"DESCRIBLE\":null,\"EDITOR\":null,\"EDITDATE\":null,\"CANEDIT\":null,\"VALUE\":\"30\",\"PROVIDER\":null,\"BASETYPENAME\":null,\"ISSTATIC\":\"N\",\"SHARETAG\":null,\"BACKTAG\":null,\"AUTOINFLAG\":\"N\",\"DEFAULTGOODSTYPE\":null,\"ISCOMPOUND\":null,\"DEFAULTDJQVALUE\":null,\"ITEMSALETYPE\":null,\"REBATENUM\":null,\"REBATENUMUSED\":null,\"ITEMSAQUITTYPE\":null,\"UNTILREMARK\":null,\"EFFECTREMARK\":null,\"STARTDATE\":null,\"ENDDATE\":null,\"SHBADFLAG\":null,\"LONGITUDE\":null,\"LATITUDE\":null,\"ISTEAMSTORE\":\"N\",\"SHOPNAME\":\"\",\"SOFTTYPE\":\"0\",\"PAYMAP\":\"N\",\"ID\":\"02\",\"NAME\":\"两年半\"},{\"NODECODE\":\"REPAIRADDYEAR\",\"BASETYPE\":\"SystemParameter\",\"DATACODE\":\"03\",\"DATANAME\":\"3月\",\"OTHERCODE\":null,\"STATE\":null,\"TYPE\":\"-986896\",\"RATE\":0,\"REMARK\":null,\"CANSALE\":null,\"METHOD\":null,\"CHECKNAME\":null,\"DESCRIBLE\":null,\"EDITOR\":null,\"EDITDATE\":null,\"CANEDIT\":null,\"VALUE\":\"1\",\"PROVIDER\":null,\"BASETYPENAME\":null,\"ISSTATIC\":\"N\",\"SHARETAG\":null,\"BACKTAG\":null,\"AUTOINFLAG\":null,\"DEFAULTGOODSTYPE\":null,\"ISCOMPOUND\":null,\"DEFAULTDJQVALUE\":null,\"ITEMSALETYPE\":null,\"REBATENUM\":null,\"REBATENUMUSED\":null,\"ITEMSAQUITTYPE\":null,\"UNTILREMARK\":null,\"EFFECTREMARK\":null,\"STARTDATE\":null,\"ENDDATE\":null,\"SHBADFLAG\":null,\"LONGITUDE\":null,\"LATITUDE\":null,\"ISTEAMSTORE\":\"N\",\"SHOPNAME\":\"\",\"SOFTTYPE\":\"0\",\"PAYMAP\":\"N\",\"ID\":\"03\",\"NAME\":\"3月\"},{\"NODECODE\":\"REPAIRADDYEAR\",\"BASETYPE\":\"SystemParameter\",\"DATACODE\":\"04\",\"DATANAME\":\"一辈子\",\"OTHERCODE\":null,\"STATE\":null,\"TYPE\":\"-986896\",\"RATE\":0,\"REMARK\":null,\"CANSALE\":null,\"METHOD\":null,\"CHECKNAME\":null,\"DESCRIBLE\":null,\"EDITOR\":null,\"EDITDATE\":null,\"CANEDIT\":null,\"VALUE\":\"100000\",\"PROVIDER\":null,\"BASETYPENAME\":null,\"ISSTATIC\":\"N\",\"SHARETAG\":null,\"BACKTAG\":null,\"AUTOINFLAG\":null,\"DEFAULTGOODSTYPE\":null,\"ISCOMPOUND\":null,\"DEFAULTDJQVALUE\":null,\"ITEMSALETYPE\":null,\"REBATENUM\":null,\"REBATENUMUSED\":null,\"ITEMSAQUITTYPE\":null,\"UNTILREMARK\":null,\"EFFECTREMARK\":null,\"STARTDATE\":null,\"ENDDATE\":null,\"SHBADFLAG\":null,\"LONGITUDE\":null,\"LATITUDE\":null,\"ISTEAMSTORE\":\"N\",\"SHOPNAME\":\"\",\"SOFTTYPE\":\"0\",\"PAYMAP\":\"N\",\"ID\":\"04\",\"NAME\":\"一辈子\"}]},\"REMARK\":{\"text\":\"备注\",\"value\":\"\",\"display\":\"show\",\"type\":\"input\"}}],\"priceObj\":{\"totalPrice\":120,\"totalNum\":1,\"djqTotal\":0,\"realSun\":120},\"isNewCus\":false,\"customer\":{\"MOBILETEL\":\"15018493994\",\"VIPNAME\":\"小赖\",\"VIPINFOID\":\"101217\",\"SEX\":\"1\"},\"receiveGoodsType\":\"shop\",\"addressInfo\":{\"receivingway\":\"0\"},\"exterbill\":{\"BILLTYPE\":\"110\",\"SHOPCODE\":\"010101\",\"TRADEMODECODE\":\"01\",\"ORIGINBILLID\":\"\",\"ORIGINBILLTYPE\":\"\",\"GATHERMAN\":\"001\",\"GATHERMANNAME\":\"R5_T2240\",\"REMARK\":\"\",\"OPERATOR\":\"001\",\"HANDLEMAN\":\"001\"}}",
-        "TRADEMODECODE": "01",
-        "TRADEMODECODENAME": "普通零售",
-        "VIPINFOID": 101217.0,
-        "VIPNAME": "小赖"
-      },
-      "PayamountDetails": {
-        "OriginPayamount": [],
-        "Payamount": [
-          {
-            "BILLID": "UR010202003160001",
-            "BILLTYPE": 522.0,
-            "PAYAMOUNT": -120.0,
-            "PAYTYPCLASSSE": "000",
-            "PAYTYPE": "001",
-            "PAYTYPENAME": "现金",
-            "SOFTTYPE": "0",
-            "SYSTEMREMARK": "由[OS010202003130003]退款系统生成",
-            "UPTAGNAME": "未确认"
-          },
-          {
-            "BILLID": "UE010202003130003",
-            "BILLTYPE": 521.0,
-            "PAYAMOUNT": 120.0,
-            "PAYTYPCLASSSE": "000",
-            "PAYTYPE": "001",
-            "PAYTYPENAME": "现金",
-            "SOFTTYPE": "0",
-            "UPTAGNAME": "未确认"
-          }
-        ],
-        "PayamountSum": {
-          "AR_DjqdyMoney": 0.0,
-          "AR_Money": 120.0,
-          "DF_Payamount": 120.0,
-          "Origin_Payamount": 120.0,
-          "Pay_Payamount": 0.0,
-          "SHOPBACKTYPE": "000",
-          "SHOPBACKTYPENAME": "普通销售",
-          "bill_Payamount": 120.0,
-          "integralcash": 0.0,
-          "numberincludetax": 0.0,
-          "rebatenum": 0.0,
-          "returnnum": 0.0
-        }
-      }
-    },
-    "msg": "查询成功",
+    "data": "UE010202004130158",
     "page": 0,
     "pagesize": 0,
     "records": 0,
     "success": true,
     "total": 0
-  },
-  "msg": "查询成功"
+  }
 }
-[2020-04-09 17:19:48,411 :: ERROR :: test_GetBillDetails.py :: GetBillDetails :: 65] 返回码不等于200，OK
-[2020-04-09 17:19:48,417 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
-[2020-04-09 17:19:50,078 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/getbilldetails?token=d986b0ee0328bdd1953406c4f6d856c9&billid=OS010202003100002&billtype=110 HTTP/1.1" 200 3308
-[2020-04-09 17:19:50,084 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case04
-[2020-04-09 17:19:50,085 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/getbilldetails
-[2020-04-09 17:19:50,085 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billid': 'OS010202003100002', 'billtype': '110'}
-[2020-04-09 17:19:50,085 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+[2020-04-13 17:59:11,271 :: INFO :: test_payamountdatacommit.py :: dbassert :: 45] [(1, '1')]
+[2020-04-13 17:59:11,275 :: INFO :: test_payamountdatacommit.py :: dbassert :: 52] [(521, 'UE010202004130158', '004', 180.0, '备注3-1'), (521, 'UE010202004130158', '001', 120.0, '备注3-2')]
+[2020-04-13 17:59:11,277 :: INFO :: test_payamountdatacommit.py :: dbassert :: 63] [(521, 'UE010202004130158', '004', 180.0, '备注3-1'), (521, 'UE010202004130158', '001', 120.0, '备注3-2')]
+[2020-04-13 17:59:11,277 :: INFO :: test_payamountdatacommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:11,287 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:12,160 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/payamount/payamountdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&billtype=521&billid=UE010202004130159&payamountjson=%5B%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130159%22%2C%22paytype%22%3A%22004%22%2C%22paytypename%22%3A%22%E9%80%9A%E8%81%94%E5%88%B7%E5%8D%A1%22%2C%22payamount%22%3A240%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A84-1%22%7D%2C%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130159%22%2C%22paytype%22%3A%22001%22%2C%22paytypename%22%3A%22%E7%8E%B0%E9%87%91%22%2C%22payamount%22%3A160%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A84-2%22%7D%5D&employeecode=001 HTTP/1.1" 200 135
+[2020-04-13 17:59:12,161 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case04
+[2020-04-13 17:59:12,162 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/payamount/payamountdatacommit
+[2020-04-13 17:59:12,162 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billtype': '521', 'billid': 'UE010202004130159', 'payamountjson': '[{"billtype":"521","billid":"UE010202004130159","paytype":"004","paytypename":"通联刷卡","payamount":240,"remark":"备注4-1"},{"billtype":"521","billid":"UE010202004130159","paytype":"001","paytypename":"现金","payamount":160,"remark":"备注4-2"}]', 'employeecode': '001'}
+[2020-04-13 17:59:12,162 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
   "code": "200",
   "data": {
     "code": "200",
     "costtime": 0,
-    "data": {
-      "EXTERBILL": {
-        "AUDITMANNAME": "",
-        "AUTOCREATETAG": 0.0,
-        "BILLCHECKSTATE": "Y",
-        "BILLFROM": "RS_BIlL",
-        "BILLFROMNAME": "零售销售单",
-        "BILLID": "OS010202003100002",
-        "BILLSTATUS": 0.0,
-        "BILLSTATUSNAME": "未审核",
-        "BILLTYPE": 110.0,
-        "BILLTYPENAME": "零售销售订单",
-        "BUSINESSVOUCHTAG": 0.0,
-        "CITYNAME": "",
-        "COUNTRYNAME": "",
-        "CREDITCONTROLFLAG": "0",
-        "CRM_VIPINFO": {
-          "ACCEPTINFO": "1",
-          "CARDID": "19062710055676",
-          "CARDLEVEL": "006",
-          "CERTTYPE": "001",
-          "DISCOUNTRATE": 0.0,
-          "EXCHANGEINTEGRAL": 0.0,
-          "INTEGRAL": 63591.0,
-          "LASTINTEGRAL": 3290.0,
-          "LASTTIME": "2020-01-02 16:35:54",
-          "MOBILETEL": "15018493994",
-          "OPERATOR": "001",
-          "PUTOUTDATE": "2019-06-27 10:04:44",
-          "REBATEINTEGRAL": 0.0,
-          "SALEMANNAME": "",
-          "SALEMONEY": 0.0,
-          "SEX": "1",
-          "SHOPCODE": "010101",
-          "STATUS": "1",
-          "TELTOTALAMOUNT": 30.0,
-          "TELTOTALREALNUMBER": 31.0,
-          "TELTOTALREALSUM": 64561.0,
-          "TELTOTALSALEQUIT": 1.0,
-          "TOTALAMOUNT": 30.0,
-          "TOTALINTEGRAL": 163590.0,
-          "TOTALREALNUMBER": 32.0,
-          "TOTALREALSUM": 64591.0,
-          "VALIDDATE": "2019-06-27 10:04:44",
-          "VIPCARDTYPE": "1",
-          "VIPCUSTTYPE": "001",
-          "VIPID": 101217.0,
-          "VIPINFOID": 101217.0,
-          "VIPNAME": "小赖"
-        },
-        "CUSTOMERBATCHID": "15018493994",
-        "DEPCODE": "101217",
-        "DISTRIBUTETYPES": "小赖",
-        "EXTERBILLDETAIL_LIST": [
-          {
-            "BILLID": "OS010202003100002",
-            "BILLTYPE": 110.0,
-            "CHECKSTATUS": 0.0,
-            "COACHPRICE": 1200.0,
-            "CONFIG": "test",
-            "CONSUME": 0.0,
-            "CONTRACTSERIALID": 0.0,
-            "COSTPRICE": 0.0,
-            "CREDIT": 0.0,
-            "CXQDYMONEY": 0.0,
-            "CXQPARVALUE": 0.0,
-            "DJQDYMONEY": 0.0,
-            "DJQPARVALUE": 0.0,
-            "DJQTYPENAME": "",
-            "EXCHANGERATE": 3100.0,
-            "GOODSCODE": "0100100102",
-            "GOODSNAME": "华为mate20 6+64 翡冷翠",
-            "HASINVOICESTATUS": "0",
-            "HASINVOICESTATUSNAME": "",
-            "HAVEPRESENT": "N",
-            "IMEISTATE": "N",
-            "INTEGRAL": 0.0,
-            "INTEGRALCASH": 0.0,
-            "ISPROMOTESALE": "N",
-            "JOKERPRICE": 0.0,
-            "LOADOBJECT": "",
-            "METHOD": "A",
-            "NUMBERINCLUDETAX": 3100.0,
-            "ORIGINBILLTYPE": 0.0,
-            "PREBILLINGNAME": "",
-            "PRICEINCLUDETAX": 3000.0,
-            "PROMOTINTEGRAL": 0.0,
-            "REALNUMBER": 1.0,
-            "REALSUM": 3000.0,
-            "REBATENUM": 100.0,
-            "REPAIRADDYEARNAME": "",
-            "RETURNNUM": 0.0,
-            "RETURNPOINTVALUE": 0.0,
-            "SALECHANGEPRICE": 0.0,
-            "SALELOWESTPRICE": 3000.0,
-            "SALEPRICE": "3100",
-            "SERIALID": 1415745.0,
-            "STORENAME": "",
-            "STORESHOPCODENAME": "",
-            "SUBSIDIESMONEY": 0.0,
-            "TAXNUMBER": 0.0
-          }
-        ],
-        "GATHERMAN": "001",
-        "GATHERMANNAME": "R5_T2240",
-        "GROUPEMPBILL_LIST": [],
-        "GROUPTAG": "0",
-        "HANDLEMAN": "002",
-        "HANDLEMANNNAME": "测试客服2",
-        "HASCHILDBILL": "N",
-        "INVOICETYPENAME": "",
-        "INVOICINGMODENAME": "",
-        "LINKMANNAME": "",
-        "LOGISTICSSYNCTAG": "N",
-        "MASTERSHOPNAME": "",
-        "MEMBERNO": "19062710055676",
-        "MOBILETEL": "15018493994",
-        "OPERATETIME": "2020-03-10 10:24:18",
-        "OPERATOR": "001",
-        "OPERATORNAME": "R5_T2240",
-        "ORIGINBILLTYPE": 0.0,
-        "ORIGINGROUPTAG": "0",
-        "PAYEDMONEY": 0.0,
-        "PAYEDNUM1": 0.0,
-        "PROVINCENAME": "",
-        "REFUNDSTATUS": "0",
-        "SHOPBACKTYPENAME": "",
-        "SHOPCODE": "010101",
-        "SHOPNAME": "迈尔讯总部",
-        "SYSBILLDATE": "2020-03-10 09:38:21",
-        "THELOG": "",
-        "TRADEDATETIME": "2020-03-10 10:24:20",
-        "TRADEMODECODE": "01",
-        "TRADEMODECODENAME": "普通零售",
-        "TRADESPOT": "010101",
-        "UPSTATUS": "N",
-        "VIPINFOID": 101217.0,
-        "VIPNAME": "小赖"
-      },
-      "PayamountDetails": {
-        "OriginPayamount": [],
-        "Payamount": [],
-        "PayamountSum": {
-          "AR_DjqdyMoney": 0.0,
-          "AR_Money": 3000.0,
-          "DF_Payamount": 3000.0,
-          "Origin_Payamount": 3000.0,
-          "Pay_Payamount": 0.0,
-          "SHOPBACKTYPENAME": "",
-          "bill_Payamount": 3000.0,
-          "integralcash": 0.0,
-          "numberincludetax": 3100.0,
-          "rebatenum": 100.0,
-          "returnnum": 0.0
-        }
-      }
-    },
-    "msg": "查询成功",
+    "data": "UE010202004130159",
     "page": 0,
     "pagesize": 0,
     "records": 0,
     "success": true,
     "total": 0
-  },
-  "msg": "查询成功"
+  }
 }
-[2020-04-09 17:19:50,085 :: ERROR :: test_GetBillDetails.py :: GetBillDetails :: 65] 返回码不等于200，OK
-[2020-04-09 17:19:50,092 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
-[2020-04-09 17:19:51,908 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/exterbill/getbilldetails?token=d986b0ee0328bdd1953406c4f6d856c9&billid=OS010202003020004&billtype=110 HTTP/1.1" 200 3183
-[2020-04-09 17:19:51,913 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case05
-[2020-04-09 17:19:51,913 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/exterbill/getbilldetails
-[2020-04-09 17:19:51,913 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billid': 'OS010202003020004', 'billtype': '110'}
-[2020-04-09 17:19:51,913 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
+[2020-04-13 17:59:12,233 :: INFO :: test_payamountdatacommit.py :: dbassert :: 45] [(1, '1')]
+[2020-04-13 17:59:12,236 :: INFO :: test_payamountdatacommit.py :: dbassert :: 52] [(521, 'UE010202004130159', '004', 240.0, '备注4-1'), (521, 'UE010202004130159', '001', 160.0, '备注4-2')]
+[2020-04-13 17:59:12,238 :: INFO :: test_payamountdatacommit.py :: dbassert :: 63] [(521, 'UE010202004130159', '004', 240.0, '备注4-1'), (521, 'UE010202004130159', '001', 160.0, '备注4-2')]
+[2020-04-13 17:59:12,238 :: INFO :: test_payamountdatacommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:12,250 :: DEBUG :: connectionpool.py :: _new_conn :: 205] Starting new HTTP connection (1): 192.168.0.190:80
+[2020-04-13 17:59:13,111 :: DEBUG :: connectionpool.py :: _make_request :: 393] http://192.168.0.190:80 "GET /r5api/rest/payamount/payamountdatacommit?token=d986b0ee0328bdd1953406c4f6d856c9&billtype=521&billid=UE010202004130160&payamountjson=%5B%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130160%22%2C%22paytype%22%3A%22004%22%2C%22paytypename%22%3A%22%E9%80%9A%E8%81%94%E5%88%B7%E5%8D%A1%22%2C%22payamount%22%3A300%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A85-1%22%7D%2C%7B%22billtype%22%3A%22521%22%2C%22billid%22%3A%22UE010202004130160%22%2C%22paytype%22%3A%22001%22%2C%22paytypename%22%3A%22%E7%8E%B0%E9%87%91%22%2C%22payamount%22%3A200%2C%22remark%22%3A%22%E5%A4%87%E6%B3%A85-2%22%7D%5D&employeecode=001 HTTP/1.1" 200 135
+[2020-04-13 17:59:13,113 :: INFO :: log.py :: log_case_info :: 21] 测试用例：case05
+[2020-04-13 17:59:13,113 :: INFO :: log.py :: log_case_info :: 22] url：http://192.168.0.190/r5api/rest/payamount/payamountdatacommit
+[2020-04-13 17:59:13,113 :: INFO :: log.py :: log_case_info :: 23] 请求参数：{'token': 'd986b0ee0328bdd1953406c4f6d856c9', 'billtype': '521', 'billid': 'UE010202004130160', 'payamountjson': '[{"billtype":"521","billid":"UE010202004130160","paytype":"004","paytypename":"通联刷卡","payamount":300,"remark":"备注5-1"},{"billtype":"521","billid":"UE010202004130160","paytype":"001","paytypename":"现金","payamount":200,"remark":"备注5-2"}]', 'employeecode': '001'}
+[2020-04-13 17:59:13,113 :: INFO :: log.py :: log_case_info :: 24] 实际结果：{
   "code": "200",
   "data": {
     "code": "200",
     "costtime": 0,
-    "data": {
-      "EXTERBILL": {
-        "AUDITMANNAME": "",
-        "AUTOCREATETAG": 1.0,
-        "BILLFROM": "MALL",
-        "BILLFROMNAME": "",
-        "BILLID": "OS010202003020004",
-        "BILLSTATUS": 1.0,
-        "BILLSTATUSNAME": "已审核",
-        "BILLTYPE": 110.0,
-        "BILLTYPENAME": "零售销售订单",
-        "CITYNAME": "",
-        "COUNTRYNAME": "",
-        "CRM_VIPINFO": {
-          "CARDID": "101201",
-          "CARDLEVEL": "006",
-          "DISCOUNTRATE": 0.0,
-          "EXCHANGEINTEGRAL": 0.0,
-          "FLYMAIL": "oZBry1eNDKtho5CE67KUCONWgydQ",
-          "INTEGRAL": 657981.0,
-          "LASTINTEGRAL": 0.0,
-          "LASTTIME": "2020-03-20 08:35:47",
-          "MOBILETEL": "15914331626",
-          "OPERATOR": "001",
-          "PUTOUTDATE": "2019-06-26 11:23:06",
-          "PUTOUTMODE": "APP",
-          "REBATEINTEGRAL": 7072.0,
-          "REMARK": "crm3:1448902",
-          "SALEMANNAME": "",
-          "SALEMONEY": 0.0,
-          "SEX": "1",
-          "SHOPCODE": "010101",
-          "STATUS": "1",
-          "TELTOTALAMOUNT": 144.0,
-          "TELTOTALREALNUMBER": 150.0,
-          "TELTOTALREALSUM": 172155.0,
-          "TELTOTALSALEQUIT": 57.0,
-          "TOTALAMOUNT": 5774.0,
-          "TOTALINTEGRAL": 666843.0,
-          "TOTALREALNUMBER": 5906.0,
-          "TOTALREALSUM": 735365.0,
-          "VALIDDATE": "2019-06-26 10:42:16",
-          "VIPCARDTYPE": "1",
-          "VIPCUSTTYPE": "001",
-          "VIPID": 101199.0,
-          "VIPINFOID": 101199.0,
-          "VIPNAME": "重置的小汤"
-        },
-        "CUSTOMERBATCHID": "15914331626",
-        "DEPCODE": "101199",
-        "DISTRIBUTETYPES": "12321",
-        "EXTERBILLDETAIL_LIST": [
-          {
-            "BILLID": "OS010202003020004",
-            "BILLTYPE": 110.0,
-            "DJQTYPENAME": "",
-            "EXCHANGERATE": 5000.0,
-            "GOODSCODE": "0100100201",
-            "GOODSID": "123123",
-            "GOODSNAME": "华为mate20X1",
-            "HASINVOICESTATUS": "0",
-            "HASINVOICESTATUSNAME": "",
-            "LOADOBJECT": "UE010202003020004",
-            "METHOD": "A",
-            "NUMBEREXCEPTAX": 5000.0,
-            "NUMBERINCLUDETAX": 5000.0,
-            "PREBILLINGNAME": "",
-            "PRICEEXCEPTAX": 5000.0,
-            "PRICEINCLUDETAX": 5000.0,
-            "REALNUMBER": 1.0,
-            "REALSUM": 5000.0,
-            "REPAIRADDYEARNAME": "",
-            "RETURNNUM": 0.0,
-            "SERIALID": 1415688.0,
-            "STORECODE": "01010101",
-            "STORENAME": "迈尔讯总仓",
-            "STORESHOPCODE": "010101",
-            "STORESHOPCODENAME": "迈尔讯总部"
-          }
-        ],
-        "FROMBILLID": "100065",
-        "GATHERMAN": "SYSTEM",
-        "GATHERMANNAME": "",
-        "GOODSOUTADDR": "123",
-        "GROUPEMPBILL_LIST": [],
-        "HANDLEMAN": "SYSTEM",
-        "HANDLEMANNNAME": "",
-        "INVOICETYPENAME": "",
-        "INVOICINGMODENAME": "",
-        "LINKMAN": "SYSTEM",
-        "LINKMANNAME": "",
-        "MASTERSHOPNAME": "",
-        "MOBILETEL": "15914331626",
-        "OPERATETIME": "2020-03-02 16:45:47",
-        "OPERATOR": "SYSTEM",
-        "OPERATORNAME": "",
-        "PAYSTATUS": "1",
-        "PROVINCENAME": "",
-        "REMARK": "商城同步订单100065",
-        "SHOPBACKTYPE": "001",
-        "SHOPBACKTYPENAME": "预售",
-        "SHOPCODE": "010101",
-        "SHOPNAME": "迈尔讯总部",
-        "SOURCEBILLTYPE": "MALL",
-        "SYSBILLDATE": "2020-03-02 16:45:47",
-        "TEL": "15914331626",
-        "THELOG": "",
-        "TRADEDATETIME": "2020-03-02 16:45:47",
-        "TRADEMODECODE": "O_MALL",
-        "TRADEMODECODENAME": "",
-        "TRADESPOT": "010101",
-        "TRADETYPE": "888",
-        "VIPINFOID": 101199.0,
-        "VIPNAME": "重置的小汤"
-      },
-      "PayamountDetails": {
-        "OriginPayamount": [],
-        "Payamount": [
-          {
-            "BILLID": "UE010202003020004",
-            "BILLTYPE": 521.0,
-            "PAYAMOUNT": 5000.0,
-            "PAYSTATUS": "Y",
-            "PAYTIME": "2020-03-02 16:45:43",
-            "PAYTYPCLASSSE": "000",
-            "PAYTYPE": "M-WEIXIN",
-            "PAYTYPENAME": "线上微信",
-            "SOFTTYPE": "0",
-            "UPTAGNAME": "未确认"
-          }
-        ],
-        "PayamountSum": {
-          "AR_DjqdyMoney": 0.0,
-          "AR_Money": 5000.0,
-          "DF_Payamount": 0.0,
-          "Origin_Payamount": 0.0,
-          "Pay_Payamount": 5000.0,
-          "SHOPBACKTYPE": "001",
-          "SHOPBACKTYPENAME": "预售",
-          "bill_Payamount": 0.0,
-          "integralcash": 0.0,
-          "numberincludetax": 5000.0,
-          "rebatenum": 0.0,
-          "returnnum": 0.0
-        }
-      }
-    },
-    "msg": "查询成功",
+    "data": "UE010202004130160",
     "page": 0,
     "pagesize": 0,
     "records": 0,
     "success": true,
     "total": 0
-  },
-  "msg": "查询成功"
+  }
 }
-[2020-04-09 17:19:51,914 :: ERROR :: test_GetBillDetails.py :: GetBillDetails :: 65] 返回码不等于200，OK
-[2020-04-09 17:19:51,914 :: DEBUG :: test_GetBillDetails.py :: tearDownClass :: 27] <<<<<tearDownClass,测试类TestGetBillDetails测试结束<<<<<
-[2020-04-09 17:19:51,915 :: DEBUG :: test_GetBillDetails.py :: tearDownModule :: 12] <<<<<tearDownModule,__main__模块测试结束<<<<<
+[2020-04-13 17:59:13,199 :: INFO :: test_payamountdatacommit.py :: dbassert :: 45] [(1, '1')]
+[2020-04-13 17:59:13,202 :: INFO :: test_payamountdatacommit.py :: dbassert :: 52] [(521, 'UE010202004130160', '004', 300.0, '备注5-1'), (521, 'UE010202004130160', '001', 200.0, '备注5-2')]
+[2020-04-13 17:59:13,205 :: INFO :: test_payamountdatacommit.py :: dbassert :: 63] [(521, 'UE010202004130160', '004', 300.0, '备注5-1'), (521, 'UE010202004130160', '001', 200.0, '备注5-2')]
+[2020-04-13 17:59:13,205 :: INFO :: test_payamountdatacommit.py :: dbassert :: 73] 》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+[2020-04-13 17:59:13,210 :: DEBUG :: test_payamountdatacommit.py :: tearDownClass :: 29] <<<<<tearDownClass,测试类Testpayamountdatacommit3测试结束<<<<<
+[2020-04-13 17:59:13,211 :: DEBUG :: test_payamountdatacommit.py :: tearDownModule :: 12] <<<<<tearDownModule,test_payamountdatacommit模块测试结束<<<<<

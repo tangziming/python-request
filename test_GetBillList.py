@@ -32,20 +32,47 @@ class TestGetBillList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def dbassert(self,shopcode,res_result):
+    def dbassert(self,shopcode,rownum,billtype,res_result):
         #数据库实例化
         db = DB()
         #数据库断言
         #主表断言
-        data_result = db.query("select datacode,dataname from t_otherbasedata  where basetype  ='CompStore'and  canedit ='Y' and cansale='N' and datacode in (select storecode from t_shopstore where shopcode ='{}')".format(shopcode))
+        data_result = db.query('''select *
+                                        from (select a.billtype,
+                                                    a.billid,
+                                                    a.shopcode,
+                                                    a.billstatus,
+                                                    a.operator,
+                                                    a.handleman,
+                                                    a.gatherman,
+                                                    a.earnestmoney,
+                                                    a.remark,
+                                                    a.baucode,
+                                                    a.shopbacktype,
+                                                    a.reviewman,
+                                                    a.approveman,
+                                                    a.gatherway,
+                                                    a.vipinfoid,
+                                                    a.paystatus,
+                                                    v.cardlevel,
+                                                    o.dataname
+                                                from t_exterbill a,t_crm_vipinfo v,t_otherbasedata o
+                                                where a.shopcode = '{shopcode}'
+                                                and billtype = '{billtype}'
+                                                and v.vipinfoid=a.vipinfoid
+                                                and o.nodecode='CARDLEVEL'
+                                                and o.datacode=v.cardlevel
+                                                order by billid desc)
+                                        where rownum <={rownum}
+                                '''.format(shopcode=shopcode,rownum=rownum,billtype=billtype))
         logging.info(data_result)
         for j in range(len(data_result)):
-            logging.info(data_result[j][0])
-            logging.info(res_result['data'][j]['storecode'])
-            logging.info(data_result[j][1])
-            logging.info(res_result['data'][j]['storename'])
-            self.assertEqual(data_result[j][0],res_result['data'][j]['storecode'],msg="仓库编码不相等")
-            self.assertEqual(data_result[j][1],res_result['data'][j]['storename'],msg="仓库名称不相等")
+            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['BILLTYPE'],msg="BILLTYPE")
+            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['BILLID'],msg="billid")
+            self.assertEqual(data_result[j][2],res_result['data']['data'][j]['SHOPCODE'],msg="SHOPCODE")
+            self.assertEqual(data_result[j][3],res_result['data']['data'][j]['BILLSTATUS'],msg="BILLSTATUS")
+            self.assertEqual(data_result[j][4],res_result['data']['data'][j]['OPERATOR'],msg="OPERATOR")
+            self.assertEqual(data_result[j][5],res_result['data']['data'][j]['HANDLEMAN'],msg="HANDLEMAN")
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
@@ -55,6 +82,8 @@ class TestGetBillList(unittest.TestCase):
         url = case_data.get('url')
         data = eval(case_data.get('data'))
         shopcode = data.get('shopcode')
+        rownum = data.get('rows')
+        billtype = data.get('billtype')
         #发送请求
         res = requests.get(url=url,params=data)
         #返回结果，并将json转字符串
@@ -65,7 +94,7 @@ class TestGetBillList(unittest.TestCase):
         self.assertEqual(res.json()['code'],'200',msg=logging.error('返回码不等于200，OK'))
         #断言
         res_result = res.json()
-        #self.dbassert(shopcode,res_result)
+        self.dbassert(shopcode,rownum,billtype,res_result)
 
     def test_01_GetBillList(self):   
         self.GetBillList("case01")

@@ -156,6 +156,12 @@ class Testcheckifexistsvipinfo(unittest.TestCase):
     def test_05_checkifexistsvipinfo(self):
         self.checkifexistsvipinfo("case05")
 
+    def test_06_checkifexistsvipinfo(self):
+        self.checkifexistsvipinfo("case06")
+
+    def test_07_checkifexistsvipinfo(self):
+        self.checkifexistsvipinfo("case07")
+
 
 
 

@@ -26,7 +26,7 @@ class TestReceiptDataCommit(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         logging.debug('<<<<<tearDownClass,测试类TestReceiptDataCommit3测试结束<<<<<')
-        cls.excel.excel_write("savePayamount","newbillid",cls.newbillid)
+        cls.excel.excel_write("payamountdatacommit","newbillid",cls.newbillid)
     def setUp(self):
         pass
 
@@ -85,7 +85,7 @@ class TestReceiptDataCommit(unittest.TestCase):
         #写入日志
         log_case_info(case_name , url , data , res_dict)
         #断言返回码
-        self.assertEqual(res.json()['code'],'200',msg='返回码不等于200，OK')
+        self.assertEqual(res.json()['code'],'200',msg='返回码不等于200')
         #断言
         billid = res.json()['data']['billid']
         self.newbillid.append(billid)

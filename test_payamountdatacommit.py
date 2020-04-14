@@ -34,21 +34,42 @@ class Testpayamountdatacommit(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def dbassert(self,shopcode,data):
+    def dbassert(self,billid,data,res_result):
         #数据库实例化
         db = DB()
         #数据库断言
         #主表断言
-        data_result = db.query("select a.billtype,a.billid,a.shopcode,a.billstatus,a.handleman,a.earnestmoney,a.remark,a.shopbacktype,a.reviewman,a.approveman,a.gatherway,a.vipinfoid from t_exterbill a   where billid ='{}'".format(billid))
-        logging.info('数据库结果',data_result)
-        for j in range(len(data_result)):
-            logging.info('数据库结果',data_result[j][0])
-            logging.info('请求参',data['exterbilljson']['shopbacktype'])
-            logging.info('数据库结果',data_result[j][1])
-            logging.info('请求参',data['exterbilljson']['VIPINFOID'])    
-            self.assertEqual(data_result[j][0],res_result['data'][j]['storecode'],msg="仓库编码不相等")
-            self.assertEqual(data_result[j][1],res_result['data'][j]['storename'],msg="仓库名称不相等")
-            
+        payamountjson = eval(data['payamountjson'])
+
+        data_result_exterbill = db.query("select e.billstatus,e.paystatus from t_exterbill e where billid ='{billid}'".format(billid=billid))
+        logging.info(data_result_exterbill)
+        for i in range(len(data_result_exterbill)): 
+            self.assertEqual(data_result_exterbill[i][0],1,msg="单据状态")
+            self.assertEqual(data_result_exterbill[i][1],'1',msg="收款状态")
+        
+        #t_payamount断言
+        data_result_payamount = db.query("select p.billtype,p.billid,p.paytype,p.payamount,p.remark from t_payamount p where billid ='{billid}' order by p.payamount desc".format(billid=billid))
+        logging.info(data_result_payamount)
+
+        for j in range(len(data_result_payamount)): 
+            self.assertEqual(data_result_payamount[j][0],521,msg="单据状态")
+            self.assertEqual(data_result_payamount[j][1],res_result['data']['data'],msg="单据号")  
+            self.assertEqual(data_result_payamount[j][2],payamountjson[j]['paytype'],msg="收款类型")       
+            self.assertEqual(data_result_payamount[j][3],payamountjson[j]['payamount'],msg="收款金额")       
+            self.assertEqual(data_result_payamount[j][4],payamountjson[j]['remark'],msg="备注")       
+
+        #t_payamountdetail断言
+        data_result_payamountdetail = db.query("select p.billtype,p.billid,p.paytype,p.payamount,p.remark from t_payamount p where billid ='{billid}' order by p.payamount desc".format(billid=billid))
+        logging.info(data_result_payamountdetail)
+        for k in range(len(data_result_payamountdetail)): 
+            self.assertEqual(data_result_payamountdetail[k][0],521,msg="单据状态")
+            self.assertEqual(data_result_payamountdetail[k][1],res_result['data']['data'],msg="单据号")  
+            self.assertEqual(data_result_payamountdetail[k][2],payamountjson[k]['paytype'],msg="收款类型")       
+            self.assertEqual(data_result_payamountdetail[k][3],payamountjson[k]['payamount'],msg="收款金额")       
+            self.assertEqual(data_result_payamountdetail[k][4],payamountjson[k]['remark'],msg="备注")
+
+
+
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
     def payamountdatacommit(self,casename):
@@ -56,7 +77,7 @@ class Testpayamountdatacommit(unittest.TestCase):
         case_name = case_data.get('case_name')
         url = case_data.get('url')
         data = eval(case_data.get('data'))
-        print(data)
+        billid = data.get('billid')
         #发送请求
         res = requests.get(url=url,params=data)
         #返回结果，并将json转字符串
@@ -64,10 +85,10 @@ class Testpayamountdatacommit(unittest.TestCase):
         #写入日志
         log_case_info(case_name , url , data , res_dict)
         #断言返回码
-        self.assertEqual(res.json()['code'],'200',msg=logging.error('返回码不等于200，OK'))
+        self.assertEqual(res.json()['code'],'200',msg='返回码不等于200，OK')
         #断言
         res_result = res.json()
-        #self.dbassert(billid,data)
+        self.dbassert(billid,data,res_result)
 
     def test_01_payamountdatacommit(self):   
         self.payamountdatacommit("case01")    
