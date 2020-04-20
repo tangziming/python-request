@@ -39,7 +39,7 @@ class TestGetHotSaleGoodList(unittest.TestCase):
         #主表断言
         data_result = db.query('''
             select *
-            from (select goodscode, goodsname, sum(realnumber)
+            from (select goodscode, goodsname, sum(realnumber) num
                     from (select a.goodscode, c.goodsname, a.realnumber
                             from t_exterbilldetail a, t_exterbill b, t_goods c
                             where a.billid = b.billid
@@ -64,8 +64,8 @@ class TestGetHotSaleGoodList(unittest.TestCase):
                                                )
                     group by goodscode, goodsname
                     order by sum(realnumber) desc,goodscode desc)
-            where rownum < 11
-        '''.format(today=getdate(0),date=getdate(numberday),shopcode=shopcode))
+            where rownum < 11  and num>0
+                    '''.format(today=getdate(0),date=getdate(numberday),shopcode=shopcode))
         logging.info('断言内容')
         logging.info(data_result)
 

@@ -58,12 +58,12 @@ class TestReceiptDataCommit(unittest.TestCase):
             logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》主表断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
         if(data['exterbilldetailjson']):
             exterbilldetailjson = eval(data['exterbilldetailjson'])
-            detaildata_result = db.query("select d.billtype,d.billid,d.goodscode,to_char(d.priceincludetax),to_char(d.num),to_char(d.exchangerate),to_char(d.numberincludetax),d.goodsitem from t_exterbilldetail d where billid ='{}'".format(billid))
+            detaildata_result = db.query("select d.billtype,d.billid,d.goodscode,to_char(d.priceincludetax),to_char(d.num),to_char(d.exchangerate),to_char(d.numberincludetax),d.goodsitem from t_exterbilldetail d where billid ='{}' order by goodscode".format(billid))
             logging.info(detaildata_result)
             for i in range(len(data_result)):  
                 self.assertEqual(detaildata_result[i][0],521,msg="单据类型")
                 self.assertEqual(detaildata_result[i][1],billid,msg="单据ID")
-                self.assertEqual(detaildata_result[i][2],exterbilldetailjson[i]['GOODSCODE'],msg="门店ID")
+                self.assertEqual(detaildata_result[i][2],exterbilldetailjson[i]['GOODSCODE'],msg="商品编码")
                 self.assertEqual(detaildata_result[i][3],exterbilldetailjson[i]['PRICEINCLUDETAX'],msg="单据状态")
                 self.assertEqual(detaildata_result[i][4],exterbilldetailjson[i]['NUM'],msg="处理人")
                 self.assertEqual(detaildata_result[i][5],exterbilldetailjson[i]['EXCHANGERATE'],msg="金额")

@@ -68,7 +68,10 @@ class Testpayamountdatacommit(unittest.TestCase):
             self.assertEqual(data_result_payamountdetail[k][3],payamountjson[k]['payamount'],msg="收款金额")       
             self.assertEqual(data_result_payamountdetail[k][4],payamountjson[k]['remark'],msg="备注")
 
-
+        #t_payralation断言
+        data_result_t_payralation = db.query("select * from t_payralation where billid ='{billid}' ".format(billid=billid))
+        logging.info(data_result_t_payralation)   
+        self.assertIsNotNone(data_result_t_payralation,msg="非空")
 
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
