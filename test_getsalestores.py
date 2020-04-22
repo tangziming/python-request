@@ -53,11 +53,11 @@ class Testgetsalestores(unittest.TestCase):
         logging.info(data_result)
         for j in range(len(data_result)):
             logging.info(data_result[j][0])
-            logging.info(res_result['data']['data'][j]['DATACODE'])
+            logging.info(res_result['data'][j]['DATACODE'])
             logging.info(data_result[j][1])
-            logging.info(res_result['data']['data'][j]['DATANAME'])
-            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['DATACODE'],msg="仓库编码不相等")
-            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['DATANAME'],msg="仓库名称不相等")
+            logging.info(res_result['data'][j]['DATANAME'])
+            self.assertEqual(data_result[j][0],res_result['data'][j]['DATACODE'],msg="仓库编码不相等")
+            self.assertEqual(data_result[j][1],res_result['data'][j]['DATANAME'],msg="仓库名称不相等")
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 

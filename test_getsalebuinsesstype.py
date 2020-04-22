@@ -32,20 +32,20 @@ class Testgetsalebuinsesstype(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def dbassert(self):
+    def dbassert(self,res_result):
         #数据库实例化
         db = DB()
         #数据库断言
         #主表断言
-        data_result = db.query('''select a.datacode,a.dataname from t_otherbasedata a where  basetype ='SystemParameter' and nodecode='SALETYPE' order by datacode''')
+        data_result = db.query('''select a.datacode,a.dataname  from t_otherbasedata a where  basetype ='SystemParameter' and nodecode='SALETYPE' and datacode <>'99' and datacode <>'98'and datacode <>'888' and state<>'Y' ''')
         logging.info(data_result)
         for j in range(len(data_result)):
             logging.info(data_result[j][0])
-            logging.info(res_result['data']['data'][j]['DATACODE'])
+            logging.info(res_result['data'][j]['DATACODE'])
             logging.info(data_result[j][1])
-            logging.info(res_result['data']['data'][j]['DATANAME'])
-            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['DATACODE'],msg="仓库编码不相等")
-            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['DATANAME'],msg="仓库名称不相等")
+            logging.info(res_result['data'][j]['DATANAME'])
+            self.assertEqual(data_result[j][0],res_result['data'][j]['DATACODE'],msg="编码不相等")
+            self.assertEqual(data_result[j][1],res_result['data'][j]['DATANAME'],msg="名称不相等")
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
@@ -65,7 +65,7 @@ class Testgetsalebuinsesstype(unittest.TestCase):
         self.assertEqual(res.json()['code'],'200',msg=logging.error('返回码不等于200，OK'))
         #断言
         res_result = res.json()
-        #self.dbassert()
+        self.dbassert(res_result)
 
     def test_01_getsalebuinsesstype(self):   
         self.getsalebuinsesstype("case01")

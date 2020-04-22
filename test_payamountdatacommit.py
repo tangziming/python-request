@@ -53,7 +53,7 @@ class Testpayamountdatacommit(unittest.TestCase):
 
         for j in range(len(data_result_payamount)): 
             self.assertEqual(data_result_payamount[j][0],521,msg="单据状态")
-            self.assertEqual(data_result_payamount[j][1],res_result['data']['data'],msg="单据号")  
+            self.assertEqual(data_result_payamount[j][1],res_result['data'],msg="单据号")  
             self.assertEqual(data_result_payamount[j][2],payamountjson[j]['paytype'],msg="收款类型")       
             self.assertEqual(data_result_payamount[j][3],payamountjson[j]['payamount'],msg="收款金额")       
             self.assertEqual(data_result_payamount[j][4],payamountjson[j]['remark'],msg="备注")       
@@ -63,7 +63,7 @@ class Testpayamountdatacommit(unittest.TestCase):
         logging.info(data_result_payamountdetail)
         for k in range(len(data_result_payamountdetail)): 
             self.assertEqual(data_result_payamountdetail[k][0],521,msg="单据状态")
-            self.assertEqual(data_result_payamountdetail[k][1],res_result['data']['data'],msg="单据号")  
+            self.assertEqual(data_result_payamountdetail[k][1],res_result['data'],msg="单据号")  
             self.assertEqual(data_result_payamountdetail[k][2],payamountjson[k]['paytype'],msg="收款类型")       
             self.assertEqual(data_result_payamountdetail[k][3],payamountjson[k]['payamount'],msg="收款金额")       
             self.assertEqual(data_result_payamountdetail[k][4],payamountjson[k]['remark'],msg="备注")

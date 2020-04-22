@@ -67,12 +67,12 @@ class TestGetBillList(unittest.TestCase):
                                 '''.format(shopcode=shopcode,rownum=rownum,billtype=billtype))
         logging.info(data_result)
         for j in range(len(data_result)):
-            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['BILLTYPE'],msg="BILLTYPE")
-            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['BILLID'],msg="billid")
-            self.assertEqual(data_result[j][2],res_result['data']['data'][j]['SHOPCODE'],msg="SHOPCODE")
-            self.assertEqual(data_result[j][3],res_result['data']['data'][j]['BILLSTATUS'],msg="BILLSTATUS")
-            self.assertEqual(data_result[j][4],res_result['data']['data'][j]['OPERATOR'],msg="OPERATOR")
-            self.assertEqual(data_result[j][5],res_result['data']['data'][j]['HANDLEMAN'],msg="HANDLEMAN")
+            self.assertEqual(data_result[j][0],res_result['data'][j]['BILLTYPE'],msg="BILLTYPE")
+            self.assertEqual(data_result[j][1],res_result['data'][j]['BILLID'],msg="billid")
+            self.assertEqual(data_result[j][2],res_result['data'][j]['SHOPCODE'],msg="SHOPCODE")
+            self.assertEqual(data_result[j][3],res_result['data'][j]['BILLSTATUS'],msg="BILLSTATUS")
+            self.assertEqual(data_result[j][4],res_result['data'][j]['OPERATOR'],msg="OPERATOR")
+            self.assertEqual(data_result[j][5],res_result['data'][j]['HANDLEMAN'],msg="HANDLEMAN")
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 

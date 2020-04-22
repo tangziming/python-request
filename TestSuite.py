@@ -17,10 +17,10 @@ suite5 = unittest.TestLoader().loadTestsFromTestCase(Testgetsalestores)
 suite6 = unittest.TestLoader().loadTestsFromTestCase(Testpayamountdatacommit)
 suite7 = unittest.TestLoader().loadTestsFromTestCase(TestReceiptDataCommit)
 
-#suite = unittest.TestSuite([suite7,suite6])
+suite = unittest.TestSuite([suite7,suite6])
 
 
-suite = unittest.TestSuite([suite3,suite2,suite1,suite4,suite5,suite7,suite6])
+#suite = unittest.TestSuite([suite3,suite2,suite1,suite4,suite5,suite7,suite6])
 
 unittest.TextTestRunner(verbosity=2).run(suite)
 

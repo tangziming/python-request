@@ -71,11 +71,11 @@ class TestGetHotSaleGoodList(unittest.TestCase):
 
         for j in range(len(data_result)):
             logging.info(data_result[j][0])
-            logging.info(res_result['data']['data'][j]['goodscode'])
+            logging.info(res_result['data'][j]['goodscode'])
             logging.info(data_result[j][1])
-            logging.info(res_result['data']['data'][j]['goodsname'])
-            self.assertEqual(data_result[j][0],res_result['data']['data'][j]['goodscode'],msg="商品编码不相等")
-            self.assertEqual(data_result[j][1],res_result['data']['data'][j]['goodsname'],msg="商品名称不相等")
+            logging.info(res_result['data'][j]['goodsname'])
+            self.assertEqual(data_result[j][0],res_result['data'][j]['goodscode'],msg="商品编码不相等")
+            self.assertEqual(data_result[j][1],res_result['data'][j]['goodsname'],msg="商品名称不相等")
             
         return  logging.info('》》》》》》》》》》》》》》》》》》》》》》》》》》》》》断言完成》》》》》》》》》》》》》》》》》》》》》》》》》》》》》')
 
